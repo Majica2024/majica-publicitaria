@@ -3,6 +3,11 @@
   --primary: rgba(240, 134, 118, 1);
   --hover-primary: rgba(240, 134, 118, 1);
   --pressed-primary: rgba(255, 89, 64, 1);
+
+  --button-primary: var(--primary);
+  --text-button-primary: #ffffff;
+
+  --gray-text: rgba(130, 130, 130, 1);
 }
 
 html,

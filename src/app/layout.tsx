@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/ui/Header";
 import type { ReactNode } from "react";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Majica Publicitaria",
@@ -30,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='es'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={poppins.className}>
         <Header />
         <main className='content'>{children}</main>
       </body>
