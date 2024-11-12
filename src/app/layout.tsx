@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Red_Hat_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/ui/Header";
 import type { ReactNode } from "react";
 
-const poppins = Poppins({ weight: "500", subsets: ["latin"] });
+const poppins = Poppins({
+  weight: "500",
+  subsets: ["latin"],
+});
+
+export const redHatDisplay = Red_Hat_Display({});
 
 export const metadata: Metadata = {
   title: "Majica Publicitaria",

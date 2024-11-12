@@ -1,0 +1,61 @@
+.servicesSection {
+  padding-block: 80px;
+  background: var(--gradient-background);
+
+  .servicesContainer {
+    background: url("../../../../../public/assets/images/lines.svg") no-repeat
+      center center / cover;
+    display: flex;
+    gap: 3.5rem;
+
+    .servicesContent {
+      display: flex;
+      justify-content: space-between;
+
+      .servicesImage {
+        width: 50%;
+
+        .mainImage {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .servicesText {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        align-items: center;
+
+        .servicesContainer {
+          flex-direction: column;
+          align-items: flex-end;
+          text-align: end;
+
+          .servicesTitle {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .knowText {
+              font-weight: 400;
+              font-size: 1.75rem;
+            }
+
+            .titleWrapper {
+              display: flex;
+              flex-direction: column;
+              font-size: 3rem;
+              text-align: end;
+
+              .servicesHighlight {
+                color: var(--secondary);
+                line-height: 1.2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

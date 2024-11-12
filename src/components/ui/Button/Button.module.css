@@ -1,9 +1,10 @@
 .button {
-  background-color: var(--button-primary);
+  background-color: var(--primary);
   border: none;
-  color: var(--text-button-primary);
+  color: var(--text-white);
   padding: 12px 25px;
   text-align: center;
   text-decoration: none;
   border-radius: 8px;
+  width: fit-content;
 }

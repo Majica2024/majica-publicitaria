@@ -1,0 +1,126 @@
+.portfolio {
+}
+
+.services {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.mainTitle {
+  font-size: 2rem;
+  color: var(--text-title);
+  margin-bottom: var(--space-base);
+}
+
+.highlight {
+  color: var(--secondary);
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-base);
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0;
+}
+
+.servicesList li {
+  color: var(--text-body);
+  padding: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.servicesList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.portfolioItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  align-items: center;
+}
+
+.portfolioItem.right {
+  direction: rtl;
+}
+
+.portfolioItem.right .content {
+  direction: ltr;
+}
+
+.content {
+  padding: var(--space-lg);
+}
+
+.title {
+  font-size: 1.75rem;
+  color: var(--text-title);
+  margin-bottom: var(--space-base);
+}
+
+.description {
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.button {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--primary-hover);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .portfolioItem {
+    grid-template-columns: 1fr;
+    gap: var(--space-base);
+  }
+
+  .portfolioItem.right {
+    direction: ltr;
+  }
+
+  .content {
+    padding: var(--space-base);
+    text-align: center;
+  }
+
+  .imageContainer {
+    order: -1;
+    min-height: 250px;
+  }
+}

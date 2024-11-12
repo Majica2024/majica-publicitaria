@@ -1,0 +1,4 @@
+.Paragraph {
+  color: var(--paragraph);
+  max-width: 550px;
+}

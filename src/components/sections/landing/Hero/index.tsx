@@ -7,16 +7,18 @@ export const Hero = () => {
   return (
     <section className={styles.hero}>
       <article className={styles.content}>
-        <LogoComponent />
-        <h1>
-          <span>Transforma tus ideas</span>
-          <span>En impresiones de impacto</span>
-        </h1>
-        <h3>
-          <span>Descubre como podemos </span>
-          <span>dar vida a tu marca</span>
-        </h3>
-        <Button span='¡Cotiza ahora!' href='/' />
+        <article>
+          <LogoComponent size='1.5rem' />
+          <h1>
+            <span>Transforma tus ideas</span>
+            <span>En impresiones de impacto</span>
+          </h1>
+          <h3>
+            <span>Descubre como podemos </span>
+            <span>dar vida a tu marca</span>
+          </h3>
+          <Button span='¡Cotiza ahora!' href='/' />
+        </article>
       </article>
       <picture className={styles.photo}>
         <img src={HeroFoto.src} alt='Hero Banner' />
