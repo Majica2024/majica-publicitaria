@@ -8,12 +8,11 @@ import {
   NEXT_PUBLIC_TO_EMAIL,
 } from "@/environment";
 import emailjs from "@emailjs/browser";
-import { useEffect, useState } from "react";
+import { type ChangeEvent, useEffect, useState } from "react";
 import styles from "./Contact.module.css";
 
-const Contact = () => {
+export const Contact = () => {
   useEffect(() => {
-    // Inicializa emailjs con tu clave pública
     if (NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
       emailjs.init(NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
     }
@@ -33,7 +32,7 @@ const Contact = () => {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -47,7 +46,6 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus({ message: "", isError: false });
 
-    // Verifica que todas las variables de entorno estén disponibles
     if (!NEXT_PUBLIC_EMAILJS_SERVICE_ID || !NEXT_PUBLIC_EMAILJS_TEMPLATE_ID) {
       setSubmitStatus({
         message:
@@ -101,13 +99,15 @@ const Contact = () => {
 
   return (
     <section className={styles.contact}>
-      <HighlightSection span='Contáctanos' />
-      <h2 className={styles.title}>
-        ¡Hablemos de tu{" "}
-        <span className={styles.highlight}>próximo proyecto!</span>
-      </h2>
+      <article className={styles.contactHead}>
+        <HighlightSection span='Contáctanos' />
+        <h2 className={styles.title}>
+          <span>¡Hablemos de tu </span>
+          <span className={styles.highlight}>próximo proyecto!</span>
+        </h2>
+      </article>
 
-      <div className={styles.container}>
+      <article className={styles.container}>
         <div className={styles.leftColumn}>
           <h3 className={styles.subtitle}>
             ¿Tienes una <br />
@@ -130,7 +130,7 @@ const Contact = () => {
           </a>
         </div>
 
-        <div className={styles.rightColumn}>
+        <article className={styles.rightColumn}>
           <div className={styles.formWrapper}>
             <p className={styles.formDescription}>
               ¿Listo para darle vida a tus ideas? Completa el formulario y
@@ -217,10 +217,8 @@ const Contact = () => {
               </button>
             </form>
           </div>
-        </div>
-      </div>
+        </article>
+      </article>
     </section>
   );
 };
-
-export default Contact;

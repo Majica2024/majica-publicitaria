@@ -6,3 +6,13 @@ export interface ParagraphProps {
   width?: string;
   className?: string;
 }
+
+export interface TestimonialCardProps {
+  testimonial: {
+    id: number;
+    title: string;
+    subtitle: string;
+    image: string;
+    description: string;
+  };
+}

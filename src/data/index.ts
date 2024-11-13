@@ -1,1 +1,2 @@
-export * from "./portfolio";
+export * from "./navigation";
+export * from "./testimonials";

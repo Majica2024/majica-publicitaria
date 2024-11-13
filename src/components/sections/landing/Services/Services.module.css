@@ -3,8 +3,7 @@
   background: var(--gradient-background);
 
   .servicesContainer {
-    background: url("../../../../../public/assets/images/lines.svg") no-repeat
-      center center / cover;
+    background: var(--bg-lines);
     display: flex;
     gap: 3.5rem;
 

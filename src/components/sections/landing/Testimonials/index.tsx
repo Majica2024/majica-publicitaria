@@ -1,41 +1,12 @@
 import { redHatDisplay } from "@/app/layout";
+import { Card } from "@/components/ui/Card";
 import { HighlightSection } from "@/components/ui/HighlightSection";
 import { Paragraph } from "@/components/ui/Paragraph";
-import Image from "next/image";
+import { testimonials } from "@/data";
+import { clsx } from "clsx";
 import styles from "./Testimonials.module.css";
 
-const testimonials = [
-  {
-    id: 1,
-    title: "Rompe tráfico",
-    subtitle: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis enim id orci sollicitudin, vel feugiat tortor vehicula. Integer sed nisl amet nisl interdum maximus",
-  },
-  {
-    id: 2,
-    title: "Rompe tráfico",
-    subtitle: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis enim id orci sollicitudin, vel feugiat tortor vehicula. Integer sed nisl amet nisl interdum maximus",
-  },
-  {
-    id: 3,
-    title: "Rompe tráfico",
-    subtitle: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis enim id orci sollicitudin, vel feugiat tortor vehicula. Integer sed nisl amet nisl interdum maximus",
-  },
-  {
-    id: 4,
-    title: "Rompe tráfico",
-    subtitle: "Lorem ipsum",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis enim id orci sollicitudin, vel feugiat tortor vehicula. Integer sed nisl amet nisl interdum maximus",
-  },
-];
-
-const Testimonials = () => {
+export const Testimonials = () => {
   return (
     <section className={styles.testimonials}>
       <article className={styles.testimonialsHead}>
@@ -54,29 +25,14 @@ const Testimonials = () => {
           compromiso en cada detalle.
         </Paragraph>
       </article>
-      <div className={styles.testimonialGrid}>
+      <div className={styles.testimonialBody}>
         {testimonials.map((testimonial) => (
-          <div key={testimonial.id} className={styles.testimonialCard}>
-            <div className={styles.logoContainer}>
-              <Image
-                src='/assets/images/MajicaLogo.png'
-                alt='Majica Logo'
-                className={styles.logo}
-                width={100}
-                height={100}
-              />
-            </div>
-            <h4 className={styles.cardTitle}>{testimonial.title}</h4>
-            <h5 className={styles.cardSubtitle}>{testimonial.subtitle}</h5>
-            <Paragraph size='0.8rem' className={redHatDisplay.className}>
-              {testimonial.description}
-            </Paragraph>
-          </div>
+          <Card key={testimonial.id} testimonial={testimonial} />
         ))}
       </div>
-      <h3>¡En Majica queremos evolucionar contigo! </h3>
+      <h3 className={clsx(redHatDisplay.className, styles.testimonialFooter)}>
+        ¡En Majica queremos evolucionar contigo!{" "}
+      </h3>
     </section>
   );
 };
-
-export default Testimonials;
