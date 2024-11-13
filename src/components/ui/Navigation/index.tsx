@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { NavItem } from "@/components/ui/NavItem";
 import { pages } from "@/data/navigation";
-import Link from "next/link";
 import styles from "./Navigation.module.css";
 
 export const Navigation = () => {

@@ -5,10 +5,10 @@
   height: 6.25rem;
   max-height: 5rem;
   width: 100%;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
 
   @media (width <= 768px) {
-    padding-inline-end: 1rem;
+    /*padding-inline-end: 1rem;*/
   }
   .icon {
     @media (width >= 768px) {

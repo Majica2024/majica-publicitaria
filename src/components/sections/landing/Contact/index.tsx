@@ -1,14 +1,19 @@
 "use client";
 
+import { Button } from "@/components/ui/Button";
 import { HighlightSection } from "@/components/ui/HighlightSection";
+import { Paragraph } from "@/components/ui/Paragraph";
 import {
   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
   NEXT_PUBLIC_EMAILJS_SERVICE_ID,
   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
   NEXT_PUBLIC_TO_EMAIL,
 } from "@/environment";
+import type { FormData, SubmitStatus } from "@/types/sections";
+import { redHatDisplay } from "@/utils";
 import emailjs from "@emailjs/browser";
-import { type ChangeEvent, useEffect, useState } from "react";
+import { clsx } from "clsx";
+import { type ChangeEvent, type FormEvent, useEffect, useState } from "react";
 import styles from "./Contact.module.css";
 
 export const Contact = () => {
@@ -18,7 +23,7 @@ export const Contact = () => {
     }
   }, []);
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -26,7 +31,7 @@ export const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState({
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({
     message: "",
     isError: false,
   });
@@ -41,7 +46,7 @@ export const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus({ message: "", isError: false });
@@ -106,38 +111,26 @@ export const Contact = () => {
           <span className={styles.highlight}>próximo proyecto!</span>
         </h2>
       </article>
-
-      <article className={styles.container}>
-        <div className={styles.leftColumn}>
-          <h3 className={styles.subtitle}>
-            ¿Tienes una <br />
+      <article className={styles.contactBody}>
+        <div className={styles.contactText}>
+          <h3 className={clsx(styles.subtitle, redHatDisplay.className)}>
+            <span>¿Tienes una</span>
             <span className={styles.idea}>Idea</span>
-            <span className={styles.highlight}> en mente?</span>
+            <span className={styles.highlight}>en mente?</span>
           </h3>
-
-          <p className={styles.description}>
+          <Paragraph width='450px'>
             Escríbenos al WhatsApp y conversemos cómo podemos ayudarte a hacerla
             realidad.
-          </p>
-
-          <a
-            href='https://wa.me/573008341223'
-            target='_blank'
-            rel='noopener noreferrer'
-            className={styles.whatsappButton}
-          >
-            Escribir al Wsp
-          </a>
+          </Paragraph>
+          <Button href='https://wa.me/573008341223' span='Escribir al Wsp' />
         </div>
-
-        <article className={styles.rightColumn}>
+        <article className={styles.contactForm}>
+          <Paragraph width='450px'>
+            ¿Listo para darle vida a tus ideas? Completa el formulario y nuestro
+            equipo te contactará para comenzar a crear algo extraordinario
+            juntos.*
+          </Paragraph>
           <div className={styles.formWrapper}>
-            <p className={styles.formDescription}>
-              ¿Listo para darle vida a tus ideas? Completa el formulario y
-              nuestro equipo te contactará para comenzar a crear algo
-              extraordinario juntos.*
-            </p>
-
             <form onSubmit={handleSubmit} className={styles.form}>
               <div className={styles.formGroup}>
                 <label htmlFor='name'>Nombre y apellido</label>
@@ -147,11 +140,11 @@ export const Contact = () => {
                   name='name'
                   value={formData.name}
                   onChange={handleChange}
+                  className={styles.input}
                   placeholder='John Ramirez'
                   required
                 />
               </div>
-
               <div className={styles.formGroup}>
                 <label htmlFor='email'>Correo electrónico</label>
                 <input
@@ -160,11 +153,11 @@ export const Contact = () => {
                   name='email'
                   value={formData.email}
                   onChange={handleChange}
+                  className={styles.input}
                   placeholder='johnramirez32@gmail.com'
                   required
                 />
               </div>
-
               <div className={styles.formGroup}>
                 <label htmlFor='phone'>Celular</label>
                 <div className={styles.phoneInput}>
@@ -175,12 +168,12 @@ export const Contact = () => {
                     name='phone'
                     value={formData.phone}
                     onChange={handleChange}
+                    className={styles.input}
                     placeholder='312 8923465'
                     required
                   />
                 </div>
               </div>
-
               <div className={styles.formGroup}>
                 <label htmlFor='socialNetwork'>Red social favorita</label>
                 <select
@@ -188,6 +181,7 @@ export const Contact = () => {
                   name='socialNetwork'
                   value={formData.socialNetwork}
                   onChange={handleChange}
+                  className={styles.select}
                   required
                 >
                   <option value=''>Seleccione</option>
@@ -197,7 +191,6 @@ export const Contact = () => {
                   <option value='linkedin'>LinkedIn</option>
                 </select>
               </div>
-
               {submitStatus.message && (
                 <div
                   className={`${styles.statusMessage} ${
@@ -207,7 +200,6 @@ export const Contact = () => {
                   {submitStatus.message}
                 </div>
               )}
-
               <button
                 type='submit'
                 className={styles.submitButton}

@@ -1,6 +1,6 @@
-import { redHatDisplay } from "@/app/layout";
 import { Paragraph } from "@/components/ui/Paragraph";
 import type { TestimonialCardProps } from "@/types/ui";
+import { redHatDisplay } from "@/utils";
 import Image from "next/image";
 import styles from "./Card.module.css";
 

@@ -7,8 +7,7 @@
   --text-white: rgba(255, 255, 255, 1);
   --text-black: rgba(0, 0, 0, 1);
   --card-bg: #0a5657;
-  --bg-lines: url("../../public/assets/images/lines.svg") no-repeat center
-    center / cover;
+  --bg-lines: url("../../public/assets/images/lines.svg") no-repeat;
 
   /* Interactive States  */
   --primary-hover: rgba(240, 134, 118, 0.8);

@@ -1,8 +1,8 @@
-import { redHatDisplay } from "@/app/layout";
 import { Card } from "@/components/ui/Card";
 import { HighlightSection } from "@/components/ui/HighlightSection";
 import { Paragraph } from "@/components/ui/Paragraph";
 import { testimonials } from "@/data";
+import { redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
 import styles from "./Testimonials.module.css";
 
