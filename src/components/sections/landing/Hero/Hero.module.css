@@ -67,11 +67,11 @@
            color: var(--primary);
          }
 
-         span:first-child{
+         & span:first-child{
            font-weight: 400;
          }
 
-         span:last-child {
+         & span:last-child {
            color: var(--secondary-opacity);
 
            @media (width > 768px) {
@@ -90,10 +90,10 @@
        font-size: 1.2rem;
        font-weight: 400;
 
-       span:first-child {
+       & span:first-child {
          font-weight: 600;
        }
-       span:last-child {
+       & span:last-child {
          color: var(--secondary-opacity);
          display: block;
          font-weight: 600;
