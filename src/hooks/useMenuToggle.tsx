@@ -26,3 +26,25 @@ export const useMenuToggle = () => {
   };
   return { isMenuOpen, toggleMenu };
 };
+
+export const useLogoComponent = () => {
+  const [isLogoVisible, setIsLogoVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    const mediaQuery: MediaQueryList = window.matchMedia("(min-width: 768px)");
+
+    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
+      setIsLogoVisible(event.matches);
+    };
+
+    setIsLogoVisible(mediaQuery.matches);
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
+  return { isLogoVisible };
+};

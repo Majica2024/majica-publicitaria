@@ -3,103 +3,24 @@
 import { Button } from "@/components/ui/Button";
 import { HighlightSection } from "@/components/ui/HighlightSection";
 import { Paragraph } from "@/components/ui/Paragraph";
-import {
-  NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-  NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-  NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-  NEXT_PUBLIC_TO_EMAIL,
-} from "@/environment";
-import type { FormData, SubmitStatus } from "@/types/sections";
+import { NEXT_PUBLIC_WHATSAPP_NUMBER } from "@/environment";
+import { useContactForm } from "@/hooks/useContactForm";
+import { useEmailSubmission } from "@/hooks/useEmailSubmission";
 import { redHatDisplay } from "@/utils";
-import emailjs from "@emailjs/browser";
 import { clsx } from "clsx";
-import { type ChangeEvent, type FormEvent, useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import styles from "./Contact.module.css";
 
 export const Contact = () => {
-  useEffect(() => {
-    if (NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
-      emailjs.init(NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-    }
-  }, []);
-
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    socialNetwork: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({
-    message: "",
-    isError: false,
-  });
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const { formData, handleChange, resetForm } = useContactForm();
+  const { isSubmitting, submitStatus, submitEmail } = useEmailSubmission();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ message: "", isError: false });
-
-    if (!NEXT_PUBLIC_EMAILJS_SERVICE_ID || !NEXT_PUBLIC_EMAILJS_TEMPLATE_ID) {
-      setSubmitStatus({
-        message:
-          "Error de configuración del servicio. Por favor, contacta al administrador.",
-        isError: true,
-      });
-      setIsSubmitting(false);
-      return;
+    const success = await submitEmail(formData);
+    if (success) {
+      resetForm();
     }
-
-    const templateParams = {
-      to_email: NEXT_PUBLIC_TO_EMAIL,
-      from_name: formData.name,
-      from_email: formData.email,
-      phone: formData.phone,
-      social_network: formData.socialNetwork,
-      message: `Nuevo contacto de ${formData.name}:
-        \nTeléfono: ${formData.phone}
-        \nRed Social: ${formData.socialNetwork}`,
-    };
-
-    try {
-      await emailjs.send(
-        NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        templateParams,
-      );
-
-      setSubmitStatus({
-        message: "¡Mensaje enviado con éxito! Te contactaremos pronto.",
-        isError: false,
-      });
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        socialNetwork: "",
-      });
-    } catch (error) {
-      console.error("Error:", error);
-      setSubmitStatus({
-        message:
-          "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.",
-        isError: true,
-      });
-    }
-
-    setIsSubmitting(false);
   };
 
   return (
@@ -122,7 +43,10 @@ export const Contact = () => {
             Escríbenos al WhatsApp y conversemos cómo podemos ayudarte a hacerla
             realidad.
           </Paragraph>
-          <Button href='https://wa.me/573008341223' span='Escribir al Wsp' />
+          <Button
+            href={`https://wa.me/${NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+            span='Escribir al Wsp'
+          />
         </div>
         <article className={styles.contactForm}>
           <Paragraph width='450px'>

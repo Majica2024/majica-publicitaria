@@ -7,11 +7,9 @@
   width: 100%;
   padding-inline: 1rem;
 
-  @media (width <= 768px) {
-    /*padding-inline-end: 1rem;*/
-  }
   .icon {
-    @media (width >= 768px) {
+    color: var(--primary);
+    @media (width > 768px) {
       display: none;
     }
   }

@@ -3,8 +3,8 @@
   --background: rgba(255, 255, 255, 1);
   --primary: rgba(240, 134, 118, 1);
   --secondary: rgba(26, 180, 170, 1);
-  --secondary-opacity: rgba(26, 180, 170, 0.09);
-  --text-white: rgba(255, 255, 255, 1);
+  --secondary-opacity: rgba(26, 180, 170, 0.8);
+  --text-white: var(--background);
   --text-black: rgba(0, 0, 0, 1);
   --card-bg: #0a5657;
   --bg-lines: url("../../public/assets/images/lines.svg") no-repeat;

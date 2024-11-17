@@ -1,8 +1,17 @@
-.link {
-  color: var(--paragraph);
-  font-size: .8rem;
+.ListItem {
+  text-align: center;
+  border-block-end: 1px solid var(--paragraph);
 
-  @media (width: 768px) {
-    font-size: 1rem;
+  @media (width > 768px) {
+    border-block-end: none;
+  }
+
+  .link {
+    color: var(--paragraph);
+    font-weight: 500;
+
+    @media (width > 968px) {
+      font-size: 1rem;
+    }
   }
 }

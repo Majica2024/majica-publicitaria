@@ -4,8 +4,10 @@ import styles from "./NavItem.module.css";
 
 export const NavItem = ({ name, url }: NavItemProps) => {
   return (
-    <Link href={url} className={styles.link}>
-      {name}
-    </Link>
+    <li className={styles.ListItem}>
+      <Link href={url} className={styles.link}>
+        {name}
+      </Link>
+    </li>
   );
 };
