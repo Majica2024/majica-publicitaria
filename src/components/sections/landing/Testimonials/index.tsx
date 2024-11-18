@@ -30,6 +30,9 @@ export const Testimonials = () => {
           <Card key={testimonial.id} testimonial={testimonial} />
         ))}
       </div>
+      <h3 className={clsx(redHatDisplay.className, styles.testimonialFooter)}>
+        ¡En Majica queremos evolucionar contigo!
+      </h3>
     </section>
   );
 };
