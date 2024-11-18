@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Footer } from "@/components/ui/Footer";
 import { Header } from "@/components/ui/Header";
 import { poppins } from "@/utils";
 import type { ReactNode } from "react";
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <Header />
         <main className='content'>{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -39,7 +39,7 @@ export const Contact = () => {
             <span className={styles.idea}>Idea</span>
             <span className={styles.highlight}>en mente?</span>
           </h3>
-          <Paragraph width='450px'>
+          <Paragraph>
             Escríbenos al WhatsApp y conversemos cómo podemos ayudarte a hacerla
             realidad.
           </Paragraph>
@@ -49,7 +49,7 @@ export const Contact = () => {
           />
         </div>
         <article className={styles.contactForm}>
-          <Paragraph width='450px'>
+          <Paragraph>
             ¿Listo para darle vida a tus ideas? Completa el formulario y nuestro
             equipo te contactará para comenzar a crear algo extraordinario
             juntos.*

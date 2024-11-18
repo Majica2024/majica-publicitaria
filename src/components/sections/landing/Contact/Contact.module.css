@@ -2,8 +2,8 @@
   margin-block: 3.75rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background: var(--bg-lines);
+  padding-inline: var(--space-base);
 
   .highlight {
     color: var(--secondary);
@@ -20,16 +20,21 @@
   }
 
   .contactBody {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-lg);
     align-items: center;
+    justify-content: center;
+
+    @media (width >= 768px) {
+      flex-direction: row;
+      gap: var(--space-lg);
+    }
 
     .contactText {
       display: flex;
       flex-direction: column;
       gap: var(--space-base);
-      align-items: flex-start;
 
       .subtitle {
         &span {
