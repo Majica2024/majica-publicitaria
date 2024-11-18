@@ -5,17 +5,25 @@
   .servicesContainer {
     background: var(--bg-lines);
     display: flex;
-    gap: 3.5rem;
+    flex-direction: column;
+    gap: 3rem;
+    padding-inline: 1rem;
 
-    .servicesContent {
-      display: flex;
-      justify-content: space-between;
+    @media (width > 768px) {
+      flex-direction: row;
+    }
 
-      .servicesImage {
-        width: 50%;
+       .servicesImage {
+         display: none;
+
+            @media (width > 768px) {
+            display: block;
+            width: 50%;
+            }
 
         .mainImage {
           width: 100%;
+            height: 100%;
           object-fit: cover;
         }
       }
@@ -55,6 +63,5 @@
           }
         }
       }
-    }
   }
 }

@@ -1,39 +1,39 @@
 .testimonialCard {
-  width: 225px;
   background: var(--background);
   border-radius: 8px;
   padding: var(--space-lg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-  }
+.testimonialCard:hover {
+  transform: translateY(-5px);
+}
 
-  .logoContainer {
-    width: 120px;
-    height: 120px;
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    margin: 0 auto var(--space-base);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-base);
-  }
+.logoContainer {
+  aspect-ratio: 1;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 1rem;
+}
 
-  .cardTitle {
-    color: var(--primary);
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: calc(var(--space-base) / 2);
-  }
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-  .cardSubtitle {
-    color: var(--text-title);
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: calc(var(--space-base) / 2);
-  }
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.cardSubtitle {
+  color: var(--text-title);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }

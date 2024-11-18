@@ -1,4 +1,6 @@
 .Paragraph {
   color: var(--paragraph);
   max-width: 550px;
+  display: flex;
+  flex-direction: column;
 }
