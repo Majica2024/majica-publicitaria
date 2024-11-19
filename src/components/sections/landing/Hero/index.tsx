@@ -4,6 +4,7 @@ import { LogoComponent } from "@/components/ui/LogoComponent";
 import { useLogoComponent } from "@/hooks/useMenuToggle";
 import { poppins, redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
+import Image from "next/image";
 import HeroFoto from "../../../../../public/assets/images/foto-banner.png";
 import styles from "./Hero.module.css";
 
@@ -33,7 +34,14 @@ export const Hero = () => {
         </article>
       </article>
       <picture className={styles.photo}>
-        <img src={HeroFoto.src} alt='Hero Banner' />
+        <Image
+          src={HeroFoto.src}
+          alt='Hero Banner'
+          width={100}
+          height={100}
+          sizes='(width > 768px) 100vw, 50vw'
+          priority
+        />
       </picture>
     </section>
   );
