@@ -1,4 +1,13 @@
+
 .portfolio {
+    @media (width > 768px) {
+      flex-direction: row;
+
+      & > :nth-child(odd) {
+        order: 1;
+        border: 1px solid red;
+      }
+    }
 }
 
 .services {
