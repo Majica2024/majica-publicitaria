@@ -10,7 +10,7 @@ export const Navigation = () => {
         {pages.map(({ name, url }) => (
           <NavItem key={name} name={name} url={url} />
         ))}
-        <Button href='/contacto' span='Contáctanos' />
+        <Button href='/#contacto' span='Contáctanos' />
       </ul>
     </nav>
   );
