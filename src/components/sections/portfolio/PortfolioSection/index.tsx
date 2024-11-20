@@ -3,42 +3,61 @@ import { Paragraph } from "@/components/ui/Paragraph";
 import { redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
 import Image from "next/image";
-import styles from "./PortfolioSection.module.css";
+import "./PortfolioSection.css";
+import "../../../../app/globals.css";
 
-export const PortfolioSection = () => {
+interface PortfolioSectionProps {
+  key: number;
+  title: string;
+  spanTitle?: string;
+  spanColor?: string;
+  image: string | undefined;
+  paragraph: string;
+  button: {
+    span: string;
+    href: string;
+  };
+  background: string;
+}
+
+export const PortfolioSection = ({
+  title,
+  paragraph,
+  button,
+  spanTitle,
+  spanColor,
+  image,
+  background,
+}: PortfolioSectionProps) => {
   return (
-    <section className={styles.section}>
-      <div className={styles.servicesContainer}>
-        <picture className={styles.servicesImage}>
-          <Image
-            src='/assets/images/service-banner.png'
-            alt='Business Cards'
-            width={100}
-            height={800}
-            sizes='(width > 768px) 100vw, 50vw'
-            className={styles.mainImage}
-          />
-        </picture>
-        <div className={clsx(redHatDisplay.className, styles.servicesText)}>
-          <div className={styles.servicesContainer}>
-            <h2 className={styles.servicesTitle}>
-              <span className={styles.knowText}>Conoce nuestro</span>
-              <div className={styles.titleWrapper}>
-                <span className={styles.catalogText}>Catálogo de</span>
-                <span className={styles.servicesHighlight}>servicios</span>
-              </div>
+    <section
+      className={"section"}
+      style={{
+        background: background,
+      }}
+    >
+      <div className={"sectionContainer"}>
+        {image && (
+          <picture className={"servicesImage"}>
+            <Image
+              src={image}
+              alt={`${title} ${spanTitle}`}
+              width={100}
+              height={800}
+              sizes='(width > 768px) 100vw, 50vw'
+              className={"mainImage"}
+            />
+          </picture>
+        )}
+
+        <div className={clsx(redHatDisplay.className, "servicesText")}>
+          <div className={"sectionTextContainer"}>
+            <h2 className={"sectionTitle"}>
+              <span className={"titleFirst"}>{title}</span>
+              <span className={"titleHighlight"}>{spanTitle}</span>
             </h2>
-            <Paragraph width='100%'>
-              <span>
-                Cada proyecto cuenta una historia única de creatividad y
-                precisión.
-              </span>
-              <span>
-                Sumérgete en nuestro portafolio y descubre cómo transformamos
-                ideas en resultados.
-              </span>
-            </Paragraph>
-            <Button span='Ver portafolio' href='/portfolio' />
+            <Paragraph width='100%'>{paragraph}</Paragraph>
+            <Button span={button.span} href={button.href} />
           </div>
         </div>
       </div>

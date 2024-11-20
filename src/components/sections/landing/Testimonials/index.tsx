@@ -9,7 +9,7 @@ import styles from "./Testimonials.module.css";
 
 export const Testimonials = () => {
   return (
-    <section className={styles.testimonials}>
+    <section className={styles.testimonials} id='casos-de-exito'>
       <article className={styles.testimonialsHead}>
         <HighlightSection span='Testimonios' />
         <h2 className={styles.sectionTitle}>

@@ -1,14 +1,17 @@
+/*.portfolio {*/
+/*  @media (width > 768px) {*/
+/*    flex-direction: row;*/
 
-.portfolio {
-    @media (width > 768px) {
-      flex-direction: row;
+/*    & > :nth-child(even) {*/
+/*      !*order: 1;*!*/
+/*      !*border: 1px solid red;*!*/
 
-      & > :nth-child(odd) {
-        order: 1;
-        border: 1px solid red;
-      }
-    }
-}
+/*      .servicesImage {*/
+/*        !*border: 1px solid blue;*!*/
+/*      }*/
+/*    }*/
+/*  }*/
+/*}*/
 
 .services {
   text-align: center;

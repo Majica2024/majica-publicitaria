@@ -3,7 +3,7 @@ export const PortfolioSectionInformation = [
     id: 1,
     title: "Avisos",
     spanTitle: "Acrílicos",
-    background: "/assets/images/service-banner.png",
+    background: "rgba(26, 180, 170, 0.09)",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -15,9 +15,10 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 2,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
-    image: "/assets/images/service-banner.png",
+    title: "Impresión a",
+    spanTitle: "gran formato",
+    image: "/assets/images/big-format.png",
+    background: "url('/assets/images/HoneycombBackground.png')",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -29,9 +30,8 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 3,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
-    image: "/assets/images/service-banner.png",
+    title: "Señalización",
+    background: "rgba(240, 134, 118, 0.09)",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -43,9 +43,9 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 4,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
-    image: "/assets/images/service-banner.png",
+    title: "Plotter",
+    spanTitle: "de corte",
+    background: "url('/assets/images/HoneycombBackground.png')",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -57,9 +57,10 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 5,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
-    image: "/assets/images/service-banner.png",
+    title: "Porta",
+    spanTitle: "pendones",
+    image: "/assets/images/banner-holder.png",
+    background: "rgba(26, 180, 170, 0.09)",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -71,9 +72,10 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 6,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
-    image: "/assets/images/service-banner.png",
+    title: "Inflables o",
+    spanTitle: "Dummies",
+    image: "/assets/images/inflatable.png",
+    background: "url('/assets/images/HoneycombBackground.png')",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -85,9 +87,10 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 7,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
-    image: "/assets/images/service-banner.png",
+    title: "Material",
+    spanTitle: "P.O.P",
+    image: "/assets/images/pop.png",
+    background: "rgba(240, 134, 118, 0.09)",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -99,9 +102,9 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 8,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
-    image: "/assets/images/service-banner.png",
+    title: "Corte y",
+    spanTitle: "grabado Láser",
+    background: "url('/assets/images/HoneycombBackground.png')",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -113,9 +116,10 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 9,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
-    image: "/assets/images/service-banner.png",
+    title: "Tropezones & ",
+    spanTitle: "exhibidores",
+    image: "/assets/images/exhibitors.png",
+    background: "rgba(26, 180, 170, 0.09)",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -127,9 +131,9 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 10,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
+    title: "Bastidores",
     image: "/assets/images/service-banner.png",
+    background: "url('/assets/images/HoneycombBackground.png')",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +
@@ -141,9 +145,10 @@ export const PortfolioSectionInformation = [
   },
   {
     id: 11,
-    title: "Avisos",
-    spanTitle: "Acrílicos",
+    title: "Estructuras",
+    spanTitle: "Metálicas",
     image: "/assets/images/service-banner.png",
+    background: "rgba(240, 134, 118, 0.09)",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
       " tendencias y necesidades de la industria. Además, desarrollamos soluciones y aplicaciones móviles en IOS" +

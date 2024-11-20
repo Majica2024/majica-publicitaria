@@ -9,6 +9,6 @@ export const pages = [
   },
   {
     name: "Casos de éxito",
-    url: "/casos-de-exito",
+    url: "/#casos-de-exito",
   },
 ];

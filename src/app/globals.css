@@ -58,3 +58,32 @@ ul,
 ol {
   list-style: none;
 }
+
+.portfolio {
+  @media (width > 768px) {
+    & > :nth-child(even) {
+      .sectionContainer {
+        .servicesImage {
+          order: 1;
+        }
+      }
+      .sectionTextContainer {
+        .sectionTitle {
+          & span:nth-child(2) {
+            color: #2bb4ac;
+          }
+        }
+      }
+    }
+
+    & > :nth-child(odd) {
+      .sectionTextContainer {
+        .sectionTitle {
+          & span:nth-child(2) {
+            color: #2bb4ac;
+          }
+        }
+      }
+    }
+  }
+}
