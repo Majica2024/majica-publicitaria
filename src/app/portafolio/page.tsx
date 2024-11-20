@@ -14,7 +14,6 @@ const Portfolio = () => {
           key={section.id}
           title={section.title}
           spanTitle={section.spanTitle}
-          spanColor={section.spanColor}
           background={section.background}
           image={section.image}
           paragraph={section.paragraph}
