@@ -9,7 +9,6 @@ import { useEmailSubmission } from "@/hooks/useEmailSubmission";
 import { redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
 import type { FormEvent } from "react";
-import styles from "./Contact.module.css";
 
 export const Contact = () => {
   const { formData, handleChange, resetForm } = useContactForm();
@@ -24,20 +23,28 @@ export const Contact = () => {
   };
 
   return (
-    <section className={styles.contact} id='contacto'>
-      <article className={styles.contactHead}>
+    <section
+      className="my-15 flex flex-col bg-[url('/assets/images/lines.svg')] bg-no-repeat px-4"
+      id='contacto'
+    >
+      <article className='text-center'>
         <HighlightSection span='Contáctanos' />
-        <h2 className={styles.title}>
+        <h2 className='mb-8 text-4xl font-bold text-majica-text-primary text-center'>
           <span>¡Hablemos de tu </span>
-          <span className={styles.highlight}>próximo proyecto!</span>
+          <span className='text-majica-secondary'>próximo proyecto!</span>
         </h2>
       </article>
-      <article className={styles.contactBody}>
-        <div className={styles.contactText}>
-          <h3 className={clsx(styles.subtitle, redHatDisplay.className)}>
+
+      <article className='flex flex-col items-center justify-center gap-8 md:flex-row md:justify-around md:px-32'>
+        <div className='flex flex-col gap-4 w-[500px]'>
+          <h3 className={clsx(redHatDisplay.className, "space-y-1")}>
             <span>¿Tienes una</span>
-            <span className={styles.idea}>Idea</span>
-            <span className={styles.highlight}>en mente?</span>
+            <span className='block text-5xl text-majica-text-primary'>
+              Idea
+            </span>
+            <span className='block text-5xl text-majica-secondary'>
+              en mente?
+            </span>
           </h3>
           <Paragraph>
             Escríbenos al WhatsApp y conversemos cómo podemos ayudarte a hacerla
@@ -48,64 +55,91 @@ export const Contact = () => {
             span='Escribir al Wsp'
           />
         </div>
-        <article className={styles.contactForm}>
+
+        <article className='flex flex-col gap-12'>
           <Paragraph>
             ¿Listo para darle vida a tus ideas? Completa el formulario y nuestro
             equipo te contactará para comenzar a crear algo extraordinario
             juntos.*
           </Paragraph>
-          <div className={styles.formWrapper}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.formGroup}>
-                <label htmlFor='name'>Nombre y apellido</label>
+
+          <div className='bg-white p-8 rounded-2xl shadow-lg'>
+            <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+              <div className='flex flex-col gap-2'>
+                <label
+                  htmlFor='name'
+                  className='text-majica-text-light text-sm'
+                >
+                  Nombre y apellido
+                </label>
                 <input
                   type='text'
                   id='name'
                   name='name'
                   value={formData.name}
                   onChange={handleChange}
-                  className={styles.input}
+                  className='w-full p-3 border border-black/10 rounded-lg text-base'
                   placeholder='John Ramirez'
                   required
                 />
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor='email'>Correo electrónico</label>
+
+              <div className='flex flex-col gap-2'>
+                <label
+                  htmlFor='email'
+                  className='text-majica-text-light text-sm'
+                >
+                  Correo electrónico
+                </label>
                 <input
                   type='email'
                   id='email'
                   name='email'
                   value={formData.email}
                   onChange={handleChange}
-                  className={styles.input}
+                  className='w-full p-3 border border-black/10 rounded-lg text-base'
                   placeholder='johnramirez32@gmail.com'
                   required
                 />
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor='phone'>Celular</label>
-                <div className={styles.phoneInput}>
-                  <span className={styles.countryCode}>🇨 +57</span>
+
+              <div className='flex flex-col gap-2'>
+                <label
+                  htmlFor='phone'
+                  className='text-majica-text-light text-sm'
+                >
+                  Celular
+                </label>
+                <div className='flex items-center gap-2 border border-black/10 rounded-lg p-3'>
+                  <span className='text-majica-text-light whitespace-nowrap'>
+                    🇨 +57
+                  </span>
                   <input
                     type='tel'
                     id='phone'
                     name='phone'
                     value={formData.phone}
                     onChange={handleChange}
-                    className={styles.input}
+                    className='flex-1 border-none p-0 text-base focus:outline-none'
                     placeholder='312 8923465'
                     required
                   />
                 </div>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor='socialNetwork'>Red social favorita</label>
+
+              <div className='flex flex-col gap-2'>
+                <label
+                  htmlFor='socialNetwork'
+                  className='text-majica-text-light text-sm'
+                >
+                  Red social favorita
+                </label>
                 <select
                   id='socialNetwork'
                   name='socialNetwork'
                   value={formData.socialNetwork}
                   onChange={handleChange}
-                  className={styles.select}
+                  className='w-full p-3 border border-black/10 rounded-lg text-base'
                   required
                 >
                   <option value=''>Seleccione</option>
@@ -115,19 +149,28 @@ export const Contact = () => {
                   <option value='linkedin'>LinkedIn</option>
                 </select>
               </div>
+
               {submitStatus.message && (
                 <div
-                  className={`${styles.statusMessage} ${
-                    submitStatus.isError ? styles.error : styles.success
-                  }`}
+                  className={clsx(
+                    "p-3 rounded-lg",
+                    submitStatus.isError
+                      ? "bg-red-100 text-red-700"
+                      : "bg-green-100 text-green-700",
+                  )}
                 >
                   {submitStatus.message}
                 </div>
               )}
+
               <button
                 type='submit'
-                className={styles.submitButton}
                 disabled={isSubmitting}
+                className={clsx(
+                  "mx-auto w-fit px-3 py-3 rounded-lg text-white font-semibold text-base transition-colors font-redhat",
+                  "bg-majica-primary hover:bg-majica-primary/80",
+                  "disabled:opacity-50 disabled:cursor-not-allowed",
+                )}
               >
                 {isSubmitting ? "Enviando..." : "Enviar"}
               </button>
