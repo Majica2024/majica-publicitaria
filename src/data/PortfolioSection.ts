@@ -132,7 +132,6 @@ export const PortfolioSectionInformation = [
   {
     id: 10,
     title: "Bastidores",
-    image: "/assets/images/service-banner.png",
     background: "url('/assets/images/HoneycombBackground.png')",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +
@@ -147,7 +146,6 @@ export const PortfolioSectionInformation = [
     id: 11,
     title: "Estructuras",
     spanTitle: "Metálicas",
-    image: "/assets/images/service-banner.png",
     background: "rgba(240, 134, 118, 0.09)",
     paragraph:
       "Ideamos, construimos e implementamos sistemas de software y plataformas tecnológicas que responden a las" +

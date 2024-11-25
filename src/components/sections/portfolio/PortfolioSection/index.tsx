@@ -52,12 +52,14 @@ export const PortfolioSection = ({
 
         <div className={clsx(redHatDisplay.className, "servicesText")}>
           <div className={"sectionTextContainer"}>
-            <h2 className={"sectionTitle"}>
-              <span className={"titleFirst"}>{title}</span>
-              <span className={"titleHighlight"}>{spanTitle}</span>
-            </h2>
-            <Paragraph width='100%'>{paragraph}</Paragraph>
-            <Button span={button.span} href={button.href} />
+            <div className={"sectionTextContent"}>
+              <h2 className={"sectionTitle"}>
+                <span className={"titleFirst"}>{title}</span>
+                <span className={"titleHighlight"}>{spanTitle}</span>
+              </h2>
+              <Paragraph width='100%'>{paragraph}</Paragraph>
+              <Button span={button.span} href={button.href} />
+            </div>
           </div>
         </div>
       </div>
