@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /*Main Colors*/
   --background: rgba(255, 255, 255, 1);
@@ -80,10 +84,17 @@ ol {
       .sectionTextContainer {
         .sectionTitle {
           & span:nth-child(2) {
-            color: #f08676;
+            color: #2bb4ac;
           }
         }
       }
     }
+  }
+}
+
+@layer utilities {
+  .mask-fade-up {
+    mask-image: linear-gradient(to bottom, white 80%, transparent);
+    border: 1px solid red;
   }
 }
