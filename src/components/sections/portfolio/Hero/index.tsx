@@ -1,9 +1,10 @@
+"use client";
+
 import { HighlightSection } from "@/components/ui/HighlightSection";
 import { redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import styles from "./Hero.module.css";
 
 const services = [
   "Avisos Acrílicos",
@@ -21,45 +22,60 @@ const services = [
 
 export const Hero = () => {
   return (
-    <section className={styles.hero}>
-      <div className={styles.container}>
-        <article className={styles.headSection}>
-          <HighlightSection span='Nuestros servicios' />
-          <h3 className={clsx(redHatDisplay.className, styles.headTitle)}>
+    <section className="bg-[url('/assets/images/bg-lines.svg')] py-16">
+      <div className="container mx-auto px-4 md:px-8">
+        {/* Mobile Header */}
+        <article className="mb-12 text-center md:hidden">
+          <HighlightSection span="Nuestros servicios" />
+          <h3 className={clsx(
+            redHatDisplay.className,
+            "flex flex-col text-4xl font-bold"
+          )}>
             <span>Todo lo que</span>
-            <span className={styles.highlight}>ofrecemos:</span>
+            <span className="text-majica-secondary">ofrecemos:</span>
           </h3>
         </article>
-        <article className={styles.bodyHero}>
-          <picture className={styles.imageWrapper}>
+
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
+          {/* Imagen */}
+          <div className="relative w-full md:w-1/2">
             <Image
-              src='/assets/images/PortfolioHero.png'
-              alt='Equipo de trabajo'
-              width={100}
-              height={100}
-              sizes='(width > 768px) 100vw, 50vw'
+              src="/assets/images/PortfolioHero.png"
+              alt="Equipo de trabajo"
+              width={600}
+              height={600}
+              className="w-full object-contain [mask-image:linear-gradient(to_bottom,white_70%,transparent)]"
+              priority
             />
-          </picture>
-          <article className={styles.servicesListHero}>
-            <article className={styles.headSection}>
-              <HighlightSection span='Nuestros servicios' />
-              <h3 className={clsx(redHatDisplay.className, styles.headTitle)}>
+          </div>
+
+          {/* Lista de servicios */}
+          <div className="flex flex-col md:w-1/2">
+            {/* Desktop Header */}
+            <article className="hidden md:block">
+              <HighlightSection span="Nuestros servicios" />
+              <h3 className={clsx(
+                redHatDisplay.className,
+                "flex flex-col text-4xl font-bold"
+              )}>
                 <span>Todo lo que</span>
-                <span className={styles.highlight}>ofrecemos:</span>
+                <span className="text-majica-secondary">ofrecemos:</span>
               </h3>
             </article>
-            <div className={styles.content}>
-              <ul className={styles.servicesList}>
+
+            {/* Lista */}
+            <div className="mt-8">
+              <ul className="flex flex-col gap-4">
                 {services.map((service) => (
-                  <li key={service} className={styles.serviceItem}>
-                    <ArrowRight className={styles.arrow} />
+                  <li key={service} className="flex items-center gap-2 text-lg text-majica-text-light">
+                    <ArrowRight className="h-5 w-5 text-majica-primary" />
                     <span>{service}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </article>
-        </article>
+          </div>
+        </div>
       </div>
     </section>
   );

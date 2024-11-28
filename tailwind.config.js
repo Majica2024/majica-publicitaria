@@ -13,6 +13,7 @@ module.exports = {
       backgroundImage: {
         "hero-pattern": "url('/assets/images/hero-banner.png')",
         "dots-pattern": "url('/assets/images/dots.png')",
+        'lines': "url('/assets/images/bg-lines.svg')",
       },
       colors: {
         majica: {

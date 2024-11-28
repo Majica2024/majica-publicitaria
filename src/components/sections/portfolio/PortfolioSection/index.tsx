@@ -3,8 +3,6 @@ import { Paragraph } from "@/components/ui/Paragraph";
 import { redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
 import Image from "next/image";
-import "./PortfolioSection.css";
-import "../../../../app/globals.css";
 
 interface PortfolioSectionProps {
   key: number;
@@ -25,41 +23,50 @@ export const PortfolioSection = ({
   paragraph,
   button,
   spanTitle,
-  spanColor,
   image,
   background,
 }: PortfolioSectionProps) => {
   return (
-    <section
-      className={"section"}
-      style={{
-        background: background,
-      }}
+    <section 
+      className="py-20"
+      style={{ background }}
     >
-      <div className={"sectionContainer"}>
+      <div className="container mx-auto flex flex-col gap-12 px-4 md:flex-row md:items-center md:gap-16 md:px-32">
+        {/* Imagen */}
         {image && (
-          <picture className={"servicesImage"}>
+          <div className="w-full md:w-1/2">
             <Image
               src={image}
               alt={`${title} ${spanTitle}`}
-              width={100}
+              width={600}
               height={800}
-              sizes='(width > 768px) 100vw, 50vw'
-              className={"mainImage"}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="mx-auto w-[70%] object-cover md:w-full"
+              priority
             />
-          </picture>
+          </div>
         )}
 
-        <div className={clsx(redHatDisplay.className, "servicesText")}>
-          <div className={"sectionTextContainer"}>
-            <div className={"sectionTextContent"}>
-              <h2 className={"sectionTitle"}>
-                <span className={"titleFirst"}>{title}</span>
-                <span className={"titleHighlight"}>{spanTitle}</span>
-              </h2>
-              <Paragraph width='100%'>{paragraph}</Paragraph>
-              <Button span={button.span} href={button.href} />
-            </div>
+        {/* Contenido */}
+        <div className={clsx(
+          redHatDisplay.className,
+          "flex flex-1 items-center justify-center"
+        )}>
+          <div className="flex w-full max-w-xl flex-col gap-12">
+            <h2 className="border-b border-gray-200 pb-4 text-4xl font-bold md:text-5xl">
+              <span className="block">{title}</span>
+              {spanTitle && (
+                <span className="mt-2 block text-majica-secondary">
+                  {spanTitle}
+                </span>
+              )}
+            </h2>
+            
+            <Paragraph className="text-lg text-majica-text-light">
+              {paragraph}
+            </Paragraph>
+
+            <Button span={button.span} href={button.href} />
           </div>
         </div>
       </div>

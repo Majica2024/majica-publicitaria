@@ -6,43 +6,56 @@ import { poppins, redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
 import Image from "next/image";
 import HeroFoto from "../../../../../public/assets/images/foto-banner.png";
-import styles from "./Hero.module.css";
 
 export const Hero = () => {
   const { isLogoVisible } = useLogoComponent();
   return (
-    <section className={styles.hero}>
-      <article className={styles.content}>
-        <article>
-          {isLogoVisible && <LogoComponent size='1.5rem' />}
-          <h1 className={styles.headText}>
-            <span
-              className={clsx(redHatDisplay.className, styles.transformIdeas)}
-            >
+    <section className="relative min-h-screen w-full bg-white px-4 py-16 md:py-0">
+      <div className="mx-auto flex max-w-7xl flex-col items-center md:min-h-screen md:flex-row md:justify-between">
+        {/* Contenido */}
+        <article className="z-10 mb-12 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:text-left">
+          {isLogoVisible && <LogoComponent size="1.5rem" />}
+          
+          {/* Heading */}
+          <h1 className="mb-6">
+            <span className={clsx(
+              redHatDisplay.className,
+              "block text-4xl font-bold text-majica-primary md:text-5xl lg:text-6xl"
+            )}>
               Transforma tus ideas
             </span>
-            <div className={clsx(poppins.className, styles.impact)}>
+            <div className={clsx(
+              poppins.className,
+              "mt-2 text-3xl font-semibold text-majica-text-primary md:text-4xl lg:text-5xl"
+            )}>
               <span>En impresiones de </span>
-              <span>impacto</span>
+              <span className="block md:inline">impacto</span>
             </div>
           </h1>
-          <h3 className={styles.bodyText}>
+
+          {/* Subtítulo */}
+          <h3 className="mb-8 text-lg text-majica-text-light md:text-xl">
             <span>Descubre como podemos </span>
-            <span>dar vida a tu marca</span>
+            <span className="block md:inline">dar vida a tu marca</span>
           </h3>
-          <Button span='¡Cotiza ahora!' href='/' />
+
+          {/* Botón */}
+          <Button span="¡Cotiza ahora!" href="/" />
         </article>
-      </article>
-      <picture className={styles.photo}>
-        <Image
-          src={HeroFoto.src}
-          alt='Hero Banner'
-          width={100}
-          height={100}
-          sizes='(width > 768px) 100vw, 50vw'
-          priority
-        />
-      </picture>
+
+        {/* Imagen */}
+        <div className="relative w-full md:w-1/2">
+          <Image
+            src={HeroFoto.src}
+            alt="Hero Banner"
+            className="h-auto w-full object-cover"
+            width={600}
+            height={600}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+          />
+        </div>
+      </div>
     </section>
   );
 };

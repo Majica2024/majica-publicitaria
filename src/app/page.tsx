@@ -4,11 +4,10 @@ import {
   Services,
   Testimonials,
 } from "@/components/sections/landing";
-import styles from "./page.module.css";
 
 const Home = () => {
   return (
-    <div className={styles.page}>
+    <div className="w-full min-h-screen">
       <Hero />
       <Services />
       <Testimonials />
