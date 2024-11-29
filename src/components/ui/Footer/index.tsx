@@ -45,7 +45,10 @@ export const Footer = () => {
             </div>
             <div className='flex items-center gap-2'>
               <span>Sígue a Majica en</span>
-              <Link href='/'>
+              <Link
+                href='https://www.instagram.com/majicapublicitaria'
+                target='_blank'
+              >
                 <FaInstagram size={20} />
               </Link>
             </div>
