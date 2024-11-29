@@ -22,9 +22,9 @@ export const Hero = () => {
       />
       <div className='absolute inset-0 bg-black/40 md:hidden' />
 
-      <div className='relative mx-auto flex max-w-7xl flex-col-reverse items-center px-4 py-16 md:min-h-screen md:flex-row md:items-center md:justify-between md:py-0'>
+      <div className='relative mx-auto flex max-w-7xl flex-col-reverse items-center px-4 pt-32 md:min-h-screen md:flex-row md:items-center md:justify-between md:py-0'>
         <article className='z-10 flex gap-4 md:gap-10 w-full flex-col items-start md:w-5/12 md:px-0'>
-          {isLogoVisible && <LogoComponent size='2.5rem' />}
+          {isLogoVisible && <LogoComponent size='2rem' />}
           <h1 className='flex flex-col gap-4 md:gap-8'>
             <span
               className={clsx(
