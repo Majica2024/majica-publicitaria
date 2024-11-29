@@ -7,7 +7,7 @@ import "../globals.css";
 
 const Portfolio = () => {
   return (
-    <section className='portfolio'>
+    <section className='flex flex-col mt-40'>
       <Hero />
       {PortfolioSectionInformation.map((section) => (
         <PortfolioSection
