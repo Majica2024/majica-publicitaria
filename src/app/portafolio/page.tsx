@@ -14,10 +14,13 @@ const Portfolio = () => {
           key={section.id}
           title={section.title}
           spanTitle={section.spanTitle}
+          spanTitleColor={section.spanTitleColor}
           background={section.background}
           image={section.image}
           paragraph={section.paragraph}
           button={section.button}
+          imageBorder={section.id % 2 === 1}
+          index={section.id}
         />
       ))}
     </section>

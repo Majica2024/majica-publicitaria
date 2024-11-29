@@ -11,16 +11,17 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-pattern": "url('/assets/images/hero-banner.png')",
+        "hero-pattern": "url('/assets/images/foto-banner.png')",
         "dots-pattern": "url('/assets/images/dots.png')",
-        'lines': "url('/assets/images/bg-lines.svg')",
+        lines: "url('/assets/images/bg-lines.svg')",
+        "hero-banner": "url('/assets/images/hero-banner.png')",
       },
       colors: {
         majica: {
           primary: "rgba(240, 134, 118, 1)", // Color oscuro del logo
           secondary: "#38B6B0", // Color turquesa/aqua del logo
           coral: "#E8927C", // Color coral/salmón de los elementos decorativos
-          "coral-light": "#FFF5F3", // Fondo coral claro
+          "coral-light": "rgba(240, 134, 118, 0.3)", // Fondo coral claro
           text: {
             primary: "#28283D",
             secondary: "#2BB4AC", // Color texto secundario

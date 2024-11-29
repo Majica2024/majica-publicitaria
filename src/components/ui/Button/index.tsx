@@ -1,3 +1,5 @@
+import { redHatDisplay } from "@/utils";
+import clsx from "clsx";
 import Link from "next/link";
 
 interface ButtonProps {
@@ -5,33 +7,20 @@ interface ButtonProps {
   href?: string;
 }
 
-export const Button = ({ span, href }: ButtonProps) => {
-  const buttonContent = (
-    <span className="relative">
-      {span}
-      <span className="absolute -right-2 -top-1 flex h-3 w-3">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-majica-coral opacity-75"></span>
-        <span className="relative inline-flex h-3 w-3 rounded-full bg-majica-coral"></span>
-      </span>
-    </span>
-  );
-
-  if (href) {
-    return (
-      <Link 
-        href={href}
-        className="inline-flex items-center justify-center rounded-full bg-majica-primary px-6 py-3 font-medium text-white transition-all hover:bg-majica-coral active:scale-95"
-      >
-        {buttonContent}
-      </Link>
-    );
-  }
-
+export const Button = ({ span, href = "/" }: ButtonProps) => {
   return (
-    <button 
-      className="inline-flex items-center justify-center rounded-full bg-majica-primary px-6 py-3 font-medium text-white transition-all hover:bg-majica-coral active:scale-95"
+    <Link
+      href={href}
+      className={clsx(
+        "rounded-lg bg-majica-primary py-3 px-6 text-white hover:bg-majica-primary-dark text-base",
+        redHatDisplay.className,
+      )}
+      style={{
+        fontWeight: 600,
+        width: "fit-content",
+      }}
     >
-      {buttonContent}
-    </button>
+      {span}
+    </Link>
   );
 };

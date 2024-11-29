@@ -11,7 +11,7 @@ export interface TestimonialCardProps {
   testimonial: {
     id: number;
     title: string;
-    subtitle: string;
+    client: string;
     image: string;
     description: string;
   };

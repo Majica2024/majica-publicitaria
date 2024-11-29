@@ -24,25 +24,25 @@ export const Contact = () => {
 
   return (
     <section
-      className="my-15 flex flex-col bg-[url('/assets/images/lines.svg')] bg-no-repeat px-4"
+      className='py-24
+       flex flex-col gap-24  px-4 border-t'
       id='contacto'
     >
       <article className='text-center'>
         <HighlightSection span='Contáctanos' />
-        <h2 className='mb-8 text-4xl font-bold text-majica-text-primary text-center'>
+        <h2 className='mb-8 text-5xl font-bold text-majica-text-primary text-center'>
           <span>¡Hablemos de tu </span>
           <span className='text-majica-secondary'>próximo proyecto!</span>
         </h2>
       </article>
-
-      <article className='flex flex-col items-center justify-center gap-8 md:flex-row md:justify-around md:px-32'>
-        <div className='flex flex-col gap-4 w-[500px]'>
+      <article className="flex flex-col items-center justify-center gap-8 bg-[url('/assets/images/lines.svg')] bg-no-repeat md:flex-row md:justify-around md:px-32">
+        <div className='flex flex-col gap-4 w-auto md:w-[500px]'>
           <h3 className={clsx(redHatDisplay.className, "space-y-1")}>
-            <span>¿Tienes una</span>
-            <span className='block text-5xl text-majica-text-primary'>
+            <span className='text-2xl'>¿Tienes una</span>
+            <span className='block text-5xl text-majica-text-primary font-bold'>
               Idea
             </span>
-            <span className='block text-5xl text-majica-secondary'>
+            <span className='block text-5xl text-majica-secondary '>
               en mente?
             </span>
           </h3>
@@ -56,13 +56,12 @@ export const Contact = () => {
           />
         </div>
 
-        <article className='flex flex-col gap-12'>
+        <article className='flex flex-col gap-12 max-w-md'>
           <Paragraph>
             ¿Listo para darle vida a tus ideas? Completa el formulario y nuestro
             equipo te contactará para comenzar a crear algo extraordinario
             juntos.*
           </Paragraph>
-
           <div className='bg-white p-8 rounded-2xl shadow-lg'>
             <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
               <div className='flex flex-col gap-2'>
@@ -79,7 +78,7 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className='w-full p-3 border border-black/10 rounded-lg text-base'
-                  placeholder='John Ramirez'
+                  placeholder='Nombre y Apellido'
                   required
                 />
               </div>
@@ -98,7 +97,7 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className='w-full p-3 border border-black/10 rounded-lg text-base'
-                  placeholder='johnramirez32@gmail.com'
+                  placeholder='E-mail'
                   required
                 />
               </div>
@@ -121,7 +120,7 @@ export const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className='flex-1 border-none p-0 text-base focus:outline-none'
-                    placeholder='312 8923465'
+                    placeholder='xxx xxxxxxx'
                     required
                   />
                 </div>
