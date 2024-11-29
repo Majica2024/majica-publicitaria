@@ -10,10 +10,10 @@ export const testimonials = [
   {
     id: 2,
     title: "Material P.O.P",
-    client: "Softic",
+    client: "Fedesoft",
     image: "/assets/images/softic.png",
     description:
-      "Softic eligió a Majica para diseñar manillas personalizadas para su evento corporativo. Creamos" +
+      "Fedesoft eligió a Majica para diseñar manillas personalizadas para su evento corporativo. Creamos" +
       " piezas únicas con materiales resistentes y diseños llamativos, logrando un accesorio funcional que destacó" +
       " su marca y encantó a los asistentes.",
   },

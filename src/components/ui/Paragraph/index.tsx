@@ -3,7 +3,6 @@
 import type { ParagraphProps } from "@/types/ui";
 import { redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
-import styles from "./Paragraph.module.css";
 
 export const Paragraph = ({
   children,
@@ -13,7 +12,11 @@ export const Paragraph = ({
 }: ParagraphProps) => {
   return (
     <p
-      className={clsx(styles.Paragraph, className, redHatDisplay.className)}
+      className={clsx(
+        "text-majica-text-paragraph font-bold",
+        className,
+        redHatDisplay.className,
+      )}
       style={{
         fontSize: size,
         width: width,

@@ -40,10 +40,7 @@ export const useEmailSubmission = () => {
       from_name: formData.name,
       from_email: formData.email,
       phone: formData.phone,
-      social_network: formData.socialNetwork,
-      message: `Nuevo contacto de ${formData.name}:
-        \nTeléfono: ${formData.phone}
-        \nRed Social: ${formData.socialNetwork}`,
+      message: formData.message,
     };
 
     try {

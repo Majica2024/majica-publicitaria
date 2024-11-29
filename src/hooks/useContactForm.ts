@@ -6,7 +6,7 @@ export const useContactForm = () => {
     name: "",
     email: "",
     phone: "",
-    socialNetwork: "",
+    message: "",
   });
 
   const handleChange = (
@@ -24,7 +24,7 @@ export const useContactForm = () => {
       name: "",
       email: "",
       phone: "",
-      socialNetwork: "",
+      message: "",
     });
   };
 

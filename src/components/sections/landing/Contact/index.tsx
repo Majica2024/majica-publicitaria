@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
 import { HighlightSection } from "@/components/ui/HighlightSection";
 import { Paragraph } from "@/components/ui/Paragraph";
 import { NEXT_PUBLIC_WHATSAPP_NUMBER } from "@/environment";
@@ -8,7 +7,10 @@ import { useContactForm } from "@/hooks/useContactForm";
 import { useEmailSubmission } from "@/hooks/useEmailSubmission";
 import { redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
+import Link from "next/link";
 import type { FormEvent } from "react";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { ColombiaIcon } from "../../../../../public/assets/icons/ColombiaIcon";
 
 export const Contact = () => {
   const { formData, handleChange, resetForm } = useContactForm();
@@ -42,7 +44,7 @@ export const Contact = () => {
             <span className='block text-5xl text-majica-text-primary font-bold'>
               Idea
             </span>
-            <span className='block text-5xl text-majica-secondary '>
+            <span className='block text-5xl text-majica-secondary font-bold'>
               en mente?
             </span>
           </h3>
@@ -50,10 +52,12 @@ export const Contact = () => {
             Escríbenos al WhatsApp y conversemos cómo podemos ayudarte a hacerla
             realidad.
           </Paragraph>
-          <Button
+          <Link
             href={`https://wa.me/${NEXT_PUBLIC_WHATSAPP_NUMBER}`}
-            span='Escribir al Wsp'
-          />
+            className='w-fit'
+          >
+            <IoLogoWhatsapp size={40} className='text-[#0CC144]' />
+          </Link>
         </div>
 
         <article className='flex flex-col gap-12 max-w-md'>
@@ -110,8 +114,11 @@ export const Contact = () => {
                   Celular
                 </label>
                 <div className='flex items-center gap-2 border border-black/10 rounded-lg p-3'>
-                  <span className='text-majica-text-light whitespace-nowrap'>
-                    🇨 +57
+                  <span className='text-majica-text-light whitespace-nowrap border-r-4 px-2 border-gray-200'>
+                    <span className='flex items-center gap-1'>
+                      <ColombiaIcon />
+                      <span> +57</span>
+                    </span>
                   </span>
                   <input
                     type='tel'
@@ -125,30 +132,25 @@ export const Contact = () => {
                   />
                 </div>
               </div>
-
               <div className='flex flex-col gap-2'>
                 <label
-                  htmlFor='socialNetwork'
+                  htmlFor='message'
                   className='text-majica-text-light text-sm'
                 >
-                  Red social favorita
+                  Mensaje
                 </label>
-                <select
-                  id='socialNetwork'
-                  name='socialNetwork'
-                  value={formData.socialNetwork}
+                <textarea
+                  id='message'
+                  name='message'
+                  value={formData.message}
+                  // @ts-ignore
                   onChange={handleChange}
-                  className='w-full p-3 border border-black/10 rounded-lg text-base'
+                  rows={4}
+                  className='w-full p-3 border border-black/10 rounded-lg text-base resize-none'
+                  placeholder='Escribe tu mensaje aquí...'
                   required
-                >
-                  <option value=''>Seleccione</option>
-                  <option value='instagram'>Instagram</option>
-                  <option value='facebook'>Facebook</option>
-                  <option value='twitter'>Twitter</option>
-                  <option value='linkedin'>LinkedIn</option>
-                </select>
+                />
               </div>
-
               {submitStatus.message && (
                 <div
                   className={clsx(

@@ -10,7 +10,7 @@ import styles from "./Header.module.css";
 export const Header = () => {
   const { isMenuOpen, toggleMenu } = useMenuToggle();
   return (
-    <header className={styles.header}>
+    <header className='fixed top-0 z-50 flex items-center justify-between w-dvw px-4 bg-white/80 backdrop-blur-sm'>
       <Link href='/'>
         <LogoComponent />
       </Link>

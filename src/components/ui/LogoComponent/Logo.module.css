@@ -1,6 +1,6 @@
 .picture {
   width: fit-content;
-  height: 32px;
+  height: 40px;
   object-fit: contain;
   display: block;
 
@@ -9,7 +9,7 @@
   }
 
   @media (width > 768px) {
-    height: 66px;
+    height: 80px;
   }
 
   & img {

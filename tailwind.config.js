@@ -26,6 +26,7 @@ module.exports = {
             primary: "#28283D",
             secondary: "#2BB4AC", // Color texto secundario
             light: "#667085", // Color texto gris
+            paragraph: "#757095", // Color texto párrafo
           },
           landing: {
             hero: "url('/images/hero.jpg')",
