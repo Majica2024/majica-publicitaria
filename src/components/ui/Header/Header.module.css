@@ -1,6 +1,0 @@
-.icon {
-  color: var(--primary);
-  @media (width > 768px) {
-    display: none;
-  }
-}

@@ -61,7 +61,7 @@ export const Contact = () => {
         </div>
 
         <article className='flex flex-col gap-12 max-w-md'>
-          <Paragraph>
+          <Paragraph className='w-full'>
             ¿Listo para darle vida a tus ideas? Completa el formulario y nuestro
             equipo te contactará para comenzar a crear algo extraordinario
             juntos.*

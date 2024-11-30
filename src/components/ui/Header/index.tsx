@@ -6,7 +6,6 @@ import { useMenuToggle } from "@/hooks/useMenuToggle";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
-import styles from "./Header.module.css";
 
 export const Header = () => {
   const { isMenuOpen, toggleMenu } = useMenuToggle();
@@ -26,7 +25,7 @@ export const Header = () => {
       fixed top-0 z-50 w-dvw px-4 
       bg-white md:bg-white/80 md:backdrop-blur-sm
       md:transition-all md:duration-300
-      ${scrolled ? "h-20 md:h-32" : "h-16 md:h-20"}
+      ${scrolled ? "h-[5rem] md:h-[5rem]" : "h-[5rem] md:h-[6rem]"}
     `}
     >
       <div className='h-full flex items-center justify-between'>
@@ -34,7 +33,11 @@ export const Header = () => {
           <LogoComponent />
         </Link>
         {isMenuOpen && <Navigation />}
-        <FaBars size={32} className={styles.icon} onClick={toggleMenu} />
+        <FaBars
+          size={32}
+          className='text-majica-primary md:hidden'
+          onClick={toggleMenu}
+        />
       </div>
     </header>
   );
