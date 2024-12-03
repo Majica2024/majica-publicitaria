@@ -4,14 +4,28 @@ import { redHatDisplay } from "@/utils";
 import { clsx } from "clsx";
 import Image from "next/image";
 
-interface PortfolioSectionProps {
+interface TextProps {
+  paragraph: string;
+  points: {
+    id: number;
+    text: string;
+  }[];
+}
+
+export interface PortfolioSectionProps {
   index: number;
   key: number;
   title: string;
   spanTitle?: string;
   spanTitleColor?: string;
   image: string | undefined;
-  paragraph: string;
+  text: {
+    paragraph: string;
+    points?: {
+      id: number;
+      text: string;
+    }[];
+  };
   button: {
     span: string;
     href: string;
@@ -23,7 +37,7 @@ interface PortfolioSectionProps {
 export const PortfolioSection = ({
   index,
   title,
-  paragraph,
+  text,
   button,
   spanTitle,
   spanTitleColor,
@@ -70,8 +84,17 @@ export const PortfolioSection = ({
             </h2>
 
             <Paragraph className='text-lg text-majica-text-light'>
-              {paragraph}
+              {text.paragraph}
             </Paragraph>
+
+            <ul className='flex flex-col gap-4'>
+              {text.points?.map((point) => (
+                <li key={point.id} className='flex items-start gap-2'>
+                  <span className='mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-majica-dark' />
+                  <span className='text-majica-text-light'>{point.text}</span>
+                </li>
+              ))}
+            </ul>
 
             <Button span={button.span} href={button.href} />
           </div>

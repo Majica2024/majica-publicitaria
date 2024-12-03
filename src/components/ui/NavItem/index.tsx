@@ -1,13 +1,14 @@
 import type { NavItemProps } from "@/types";
 import Link from "next/link";
-import styles from "./NavItem.module.css";
 
-export const NavItem = ({ name, url }: NavItemProps) => {
+export const NavItem = ({ name, url, onClick }: NavItemProps) => {
   return (
-    <li className={styles.ListItem}>
-      <Link href={url} className={styles.link}>
-        {name}
-      </Link>
-    </li>
+    <Link 
+      href={url} 
+      onClick={onClick} 
+      className="text-majica-text-primary hover:text-majica-primary transition-colors duration-200"
+    >
+      {name}
+    </Link>
   );
 };

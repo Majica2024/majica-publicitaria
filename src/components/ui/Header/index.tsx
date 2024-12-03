@@ -19,6 +19,7 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <header
       className={`
@@ -32,7 +33,7 @@ export const Header = () => {
         <Link href='/'>
           <LogoComponent />
         </Link>
-        {isMenuOpen && <Navigation />}
+        {isMenuOpen && <Navigation onLinkClick={toggleMenu} />}
         <FaBars
           size={32}
           className='text-majica-primary md:hidden'

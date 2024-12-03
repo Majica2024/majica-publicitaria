@@ -1,4 +1,5 @@
 export interface NavItemProps {
-  name: string;
+ name: string;
   url: string;
+  onClick?: () => void;
 }

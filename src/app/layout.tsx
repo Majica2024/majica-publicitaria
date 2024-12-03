@@ -4,6 +4,7 @@ import { Footer } from "@/components/ui/Footer";
 import { Header } from "@/components/ui/Header";
 import { poppins } from "@/utils";
 import type { ReactNode } from "react";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Majica Publicitaria",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Header />
         <main className='content'>{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

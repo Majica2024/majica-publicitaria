@@ -37,7 +37,7 @@ export const Contact = () => {
           <span className='text-majica-secondary'>próximo proyecto!</span>
         </h2>
       </article>
-      <article className="flex flex-col items-center justify-center gap-8 bg-[url('/assets/images/lines.svg')] bg-no-repeat md:flex-row md:justify-around md:px-32">
+      <article className="flex flex-col md:items-center justify-center gap-8 bg-[url('/assets/images/lines.svg')] bg-no-repeat md:flex-row md:justify-around md:px-32">
         <div className='flex flex-col gap-4 w-auto md:w-[500px]'>
           <h3 className={clsx(redHatDisplay.className, "space-y-1")}>
             <span className='text-2xl'>¿Tienes una</span>
@@ -49,18 +49,11 @@ export const Contact = () => {
             </span>
           </h3>
           <Paragraph>
-            Escríbenos al WhatsApp y conversemos cómo podemos ayudarte a hacerla
-            realidad.
+            Escríbenos y conversemos cómo podemos ayudarte a hacerla realidad.
           </Paragraph>
-          <Link
-            href={`https://wa.me/${NEXT_PUBLIC_WHATSAPP_NUMBER}`}
-            className='w-fit'
-          >
-            <IoLogoWhatsapp size={40} className='text-[#0CC144]' />
-          </Link>
         </div>
 
-        <article className='flex flex-col gap-12 max-w-md'>
+        <article className='flex flex-col gap-12 w-auto md:w-[500px]'>
           <Paragraph className='w-full'>
             ¿Listo para darle vida a tus ideas? Completa el formulario y nuestro
             equipo te contactará para comenzar a crear algo extraordinario

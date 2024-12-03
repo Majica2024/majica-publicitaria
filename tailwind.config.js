@@ -22,6 +22,7 @@ module.exports = {
           secondary: "#38B6B0", // Color turquesa/aqua del logo
           coral: "#E8927C", // Color coral/salmón de los elementos decorativos
           "coral-light": "rgba(240, 134, 118, 0.3)", // Fondo coral claro
+          dark: "#28283D",
           text: {
             primary: "#28283D",
             secondary: "#2BB4AC", // Color texto secundario

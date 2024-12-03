@@ -1,20 +1,22 @@
 import { Button } from "@/components/ui/Button";
 import { NavItem } from "@/components/ui/NavItem";
 import { pages } from "@/data/navigation";
-import styles from "./Navigation.module.css";
 
-export const Navigation = () => {
+interface NavigationProps {
+  onLinkClick?: () => void;
+}
+
+export const Navigation = ({ onLinkClick }: NavigationProps) => {
   return (
-    <nav className='flex justify-end absolute right-0 top-20 me-4 text-gray-700 z-20 md:relative md:top-auto md:me-0'>
-      <ul
-        className='flex flex-col items-center gap-8
-                   bg-white rounded-b-3xl p-4
-                   shadow-lg border border-white/30
-                   md:flex-row md:gap-4 md:bg-transparent md:backdrop-blur-none
-                   md:border-none md:shadow-none'
-      >
+    <nav className='fixed inset-0 top-20 bg-white md:relative md:top-0 md:bg-transparent'>
+      <ul className='flex flex-col items-center gap-8 p-8 md:flex-row md:p-0'>
         {pages.map(({ name, url }) => (
-          <NavItem key={name} name={name} url={url} />
+          <li 
+            key={name} 
+            className="relative font-medium"
+          >
+            <NavItem name={name} url={url} onClick={onLinkClick} />
+          </li>
         ))}
         <Button href='/#contacto' span='Contáctanos' />
       </ul>

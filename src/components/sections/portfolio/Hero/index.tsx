@@ -47,7 +47,7 @@ export const Hero = () => {
               priority
             />
           </div>
-          <div className='flex flex-col md:w-fit pr-56'>
+          <div className='flex flex-col md:w-fit md:pr-56'>
             <article className='hidden md:block'>
               <HighlightSection span='Nuestros servicios' />
               <h3
