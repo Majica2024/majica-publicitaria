@@ -33,7 +33,14 @@ export const Header = () => {
         <Link href='/'>
           <LogoComponent />
         </Link>
-        {isMenuOpen && <Navigation onLinkClick={toggleMenu} />}
+        <div className="hidden md:block">
+          <Navigation />
+        </div>
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <Navigation onLinkClick={toggleMenu} />
+          </div>
+        )}
         <FaBars
           size={32}
           className='text-majica-primary md:hidden'

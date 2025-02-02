@@ -13,7 +13,7 @@ module.exports = {
       backgroundImage: {
         "hero-pattern": "url('/assets/images/foto-banner.png')",
         "dots-pattern": "url('/assets/images/dots.png')",
-        "ground-lines": "url('/assets/images/bg-lines.svg')",
+        "ground-lines": "url('/assets/images/lines.svg')",
         "hero-banner": "url('/assets/images/hero-banner.png')",
       },
       colors: {

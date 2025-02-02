@@ -4,11 +4,12 @@ import { pages } from "@/data/navigation";
 
 interface NavigationProps {
   onLinkClick?: () => void;
+  className?: string;
 }
 
-export const Navigation = ({ onLinkClick }: NavigationProps) => {
+export const Navigation = ({ onLinkClick, className = '' }: NavigationProps) => {
   return (
-    <nav className='fixed inset-0 top-20 bg-white md:relative md:top-0 md:bg-transparent'>
+    <nav className={`fixed inset-0 top-20 bg-white md:relative md:top-0 md:bg-transparent ${className}`}>
       <ul className='flex flex-col items-center gap-8 p-8 md:flex-row md:p-0'>
         {pages.map(({ name, url }) => (
           <li 
