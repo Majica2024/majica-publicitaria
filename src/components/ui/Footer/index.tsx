@@ -7,15 +7,23 @@ export const Footer = () => {
       <div className='container mx-auto'>
         <div className='flex flex-col items-center gap-8  md:gap-4  text-center'>
           <div className='flex flex-col items-center gap-8 text-center md:flex-row md:justify-around w-full'>
-            <div className='flex items-center gap-2'>
-              <span>Sígue a Majica en</span>
-              <Link
-                href='https://www.instagram.com/majicapublicitaria'
-                target='_blank'
-                className='hover:opacity-80 transition-opacity'
+            <div className='flex flex-col items-center gap-2 md:items-start'>
+              <div className='flex items-center gap-2'>
+                <span>Sígue a Majica en</span>
+                <Link
+                  href='https://www.instagram.com/majicapublicitaria'
+                  target='_blank'
+                  className='hover:opacity-80 transition-opacity'
+                >
+                  <FaInstagram size={24} />
+                </Link>
+              </div>
+              <a 
+                href='mailto:ventas@majicapubicitaria.com'
+                className='hover:underline text-sm md:text-base'
               >
-                <FaInstagram size={24} />
-              </Link>
+                ventas@majicapubicitaria.com
+              </a>
             </div>
             <div className='flex flex-col gap-4 md:flex-row'>
               <Link href='/' className='hover:underline'>
