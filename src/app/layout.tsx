@@ -5,6 +5,9 @@ import { Header } from "@/components/ui/Header";
 import { poppins } from "@/utils";
 import type { ReactNode } from "react";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import Bolita from '@/components/Bolita';
+// import LaserHeaderFX from '@/components/LaserHeaderFX';
+
 
 export const metadata: Metadata = {
   title: "Majica Publicitaria",
@@ -22,6 +25,8 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body className={poppins.className}>
+        <Bolita />
+        {/* <LaserHeaderFX /> */}
         <Header />
         <main className='content'>{children}</main>
         <Footer />
