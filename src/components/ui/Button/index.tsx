@@ -12,7 +12,7 @@ export const Button = ({ span, href = "/" }: ButtonProps) => {
     <Link
       href={href}
       className={clsx(
-        "rounded-lg bg-majica-primary py-3 px-6 text-white hover:bg-majica-primary-dark text-base",
+        "rounded-lg bg-majica-dark py-3 px-6 text-white hover:bg-majica-dark text-base",
         redHatDisplay.className,
       )}
       style={{
