@@ -1,16 +1,24 @@
 import {
   Contact,
   Hero,
-  Services,
+  InstagramSection,
+  Process,
+  ServicesGrid,
+  ServicesMarquee,
   Testimonials,
+  TrustBar,
 } from "@/components/sections/landing";
 
 const Home = () => {
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full">
       <Hero />
-      <Services />
+      <ServicesMarquee />
+      <TrustBar />
+      <ServicesGrid />
+      <Process />
       <Testimonials />
+      <InstagramSection />
       <Contact />
     </div>
   );

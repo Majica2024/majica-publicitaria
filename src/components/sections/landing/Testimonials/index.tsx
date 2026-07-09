@@ -1,53 +1,67 @@
-"use client";
-
-import { Card } from "@/components/ui/Card";
-import { HighlightSection } from "@/components/ui/HighlightSection";
-import { Paragraph } from "@/components/ui/Paragraph";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { testimonials } from "@/data";
-import { redHatDisplay } from "@/utils";
-import { clsx } from "clsx";
+import { bricolage } from "@/utils";
+import clsx from "clsx";
+import Image from "next/image";
+
+const webpImage = (path: string) =>
+  path
+    .replace("/fedesoft.png", "/fedesoft.webp")
+    .replace("/softic.png", "/softic.webp")
+    .replace("/Auteco.png", "/auteco.webp")
+    .replace("/kikes.png", "/kikes.webp");
 
 export const Testimonials = () => {
   return (
-    <section
-      className='flex flex-col items-center gap-12 px-4 py-16 text-center'
-      id='casos-de-exito'
-    >
-      <article className='mx-auto w-full max-w-[90%] text-center md:max-w-[500px]'>
-        <HighlightSection span='Testimonios' />
-        <h2 className='mb-4 text-2xl font-bold text-majica-text-primary md:text-4xl'>
-          Historias de <span className='text-majica-secondary'>éxito</span>{" "}
-          profesional
-        </h2>
-        <h3 className='mb-4 text-xl font-semibold text-majica-secondary md:text-2xl'>
-          ¡Historias de éxito que marcan la diferencia!
-        </h3>
-        <Paragraph>
-          Explora cómo hemos ayudado a nuestros clientes a destacar con
-          soluciones de impresión personalizadas y de alto impacto.
-        </Paragraph>
-      </article>
+    <section id="casos-de-exito" className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
+      <SectionHeading
+        eyebrow="Casos de éxito"
+        title={
+          <>
+            Marcas que ya se{" "}
+            <span className="text-brand-coral-ink">imprimen con Majica</span>
+          </>
+        }
+        description="Proyectos reales de sublimación, P.O.P y gran formato para empresas que vuelven a cotizar."
+      />
 
-      <div
-        className='grid w-full max-w-7xl gap-8 px-4
-        grid-cols-1
-        sm:grid-cols-2
-        md:grid-cols-3
-        lg:grid-cols-4'
-      >
+      <ul className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
         {testimonials.map((testimonial) => (
-          <Card key={testimonial.id} testimonial={testimonial} />
+          <li
+            key={testimonial.id}
+            className="flex flex-col gap-5 rounded-2xl border border-brand-line bg-white p-8"
+          >
+            <div className="flex items-center justify-between gap-4">
+              <Image
+                src={webpImage(testimonial.image)}
+                alt={`Logo de ${testimonial.client}`}
+                width={110}
+                height={56}
+                className="h-11 w-auto object-contain"
+              />
+              <span
+                className={clsx(
+                  bricolage.className,
+                  "rounded-full bg-brand-teal-soft px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand-teal-ink",
+                )}
+              >
+                {testimonial.title}
+              </span>
+            </div>
+            <blockquote className="text-[15px] leading-relaxed text-brand-ink-soft">
+              “{testimonial.description}”
+            </blockquote>
+            <footer
+              className={clsx(
+                bricolage.className,
+                "mt-auto text-sm font-bold text-brand-ink",
+              )}
+            >
+              {testimonial.client}
+            </footer>
+          </li>
         ))}
-      </div>
-
-      <h3
-        className={clsx(
-          redHatDisplay.className,
-          "text-2xl text-majica-text-primary md:text-3xl font-semibold",
-        )}
-      >
-        ¡En Majica queremos evolucionar contigo!
-      </h3>
+      </ul>
     </section>
   );
 };

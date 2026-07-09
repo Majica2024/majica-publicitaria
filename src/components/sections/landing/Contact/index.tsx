@@ -1,16 +1,16 @@
 "use client";
 
-import { HighlightSection } from "@/components/ui/HighlightSection";
-import { Paragraph } from "@/components/ui/Paragraph";
-import { NEXT_PUBLIC_WHATSAPP_NUMBER } from "@/environment";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useContactForm } from "@/hooks/useContactForm";
 import { useEmailSubmission } from "@/hooks/useEmailSubmission";
-import { redHatDisplay } from "@/utils";
-import { clsx } from "clsx";
+import { WHATSAPP_DEFAULT_MESSAGE, bricolage, whatsappLink } from "@/utils";
+import clsx from "clsx";
 import Link from "next/link";
 import type { FormEvent } from "react";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { ColombiaIcon } from "../../../../../public/assets/icons/ColombiaIcon";
+
+const inputStyles =
+  "w-full rounded-xl border border-brand-line bg-brand-paper/60 p-3.5 text-base text-brand-ink placeholder:text-brand-ink-soft/60 transition-colors focus:border-brand-teal focus:outline-none";
 
 export const Contact = () => {
   const { formData, handleChange, resetForm } = useContactForm();
@@ -25,153 +25,150 @@ export const Contact = () => {
   };
 
   return (
-    <section
-      className='py-24
-       flex flex-col gap-24  px-4 border-t'
-      id='contacto'
-    >
-      <article className='text-center'>
-        <HighlightSection span='Contáctanos' />
-        <h2 className='mb-8 text-5xl font-bold text-majica-text-primary text-center'>
-          <span>¡Hablemos de tu </span>
-          <span className='text-majica-secondary'>próximo proyecto!</span>
-        </h2>
-      </article>
-      <article className="flex flex-col md:items-center justify-center gap-8 bg-[url('/assets/images/lines.svg')] bg-no-repeat md:flex-row md:justify-around md:px-32">
-        <div className='flex flex-col gap-4 w-auto md:w-[500px]'>
-          <h3 className={clsx(redHatDisplay.className, "space-y-1")}>
-            <span className='text-2xl'>¿Tienes una</span>
-            <span className='block text-5xl text-majica-text-primary font-bold'>
-              Idea
-            </span>
-            <span className='block text-5xl text-majica-secondary font-bold'>
-              en mente?
-            </span>
-          </h3>
-          <Paragraph>
-            Escríbenos y conversemos cómo podemos ayudarte a hacerla realidad.
-          </Paragraph>
+    <section id="contacto" className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
+      <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-[1fr_1.1fr] md:gap-16">
+        <div className="flex flex-col gap-8 md:sticky md:top-28">
+          <SectionHeading
+            align="left"
+            eyebrow="Contáctanos"
+            title={
+              <>
+                ¿Tienes una idea?{" "}
+                <span className="text-brand-coral-ink">Hagámosla imprimible</span>
+              </>
+            }
+            description="Completa el formulario y nuestro equipo te contacta el mismo día hábil con una propuesta."
+          />
+
+          <div className="flex flex-col gap-3 rounded-2xl bg-brand-teal-soft p-6">
+            <p className={clsx(bricolage.className, "font-bold text-brand-ink")}>
+              ¿Tienes prisa?
+            </p>
+            <p className="text-sm leading-relaxed text-brand-ink-soft">
+              Escríbenos directo a WhatsApp y cotiza en minutos con un asesor
+              del taller.
+            </p>
+            <Link
+              href={whatsappLink(WHATSAPP_DEFAULT_MESSAGE)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={clsx(
+                bricolage.className,
+                "mt-1 inline-flex min-h-[48px] w-fit items-center gap-2 rounded-full bg-brand-whatsapp px-6 py-3 font-semibold text-white transition-all duration-200 hover:brightness-95",
+              )}
+            >
+              <IoLogoWhatsapp size={20} aria-hidden="true" />
+              Cotizar por WhatsApp
+            </Link>
+          </div>
         </div>
 
-        <article className='flex flex-col gap-12 w-auto md:w-[500px]'>
-          <Paragraph className='w-full'>
-            ¿Listo para darle vida a tus ideas? Completa el formulario y nuestro
-            equipo te contactará para comenzar a crear algo extraordinario
-            juntos.*
-          </Paragraph>
-          <div className='bg-white p-8 rounded-2xl shadow-lg'>
-            <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-              <div className='flex flex-col gap-2'>
-                <label
-                  htmlFor='name'
-                  className='text-majica-text-light text-sm'
-                >
-                  Nombre y apellido
-                </label>
-                <input
-                  type='text'
-                  id='name'
-                  name='name'
-                  value={formData.name}
-                  onChange={handleChange}
-                  className='w-full p-3 border border-black/10 rounded-lg text-base'
-                  placeholder='Nombre y Apellido'
-                  required
-                />
-              </div>
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-5 rounded-2xl border border-brand-line bg-white p-7 shadow-[0_24px_60px_-32px_rgba(40,40,61,0.25)] md:p-9"
+        >
+          <div className="flex flex-col gap-2">
+            <label htmlFor="name" className="text-sm font-medium text-brand-ink">
+              Nombre y apellido
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              autoComplete="name"
+              className={inputStyles}
+              placeholder="¿Cómo te llamas?"
+              required
+            />
+          </div>
 
-              <div className='flex flex-col gap-2'>
-                <label
-                  htmlFor='email'
-                  className='text-majica-text-light text-sm'
-                >
-                  Correo electrónico
-                </label>
-                <input
-                  type='email'
-                  id='email'
-                  name='email'
-                  value={formData.email}
-                  onChange={handleChange}
-                  className='w-full p-3 border border-black/10 rounded-lg text-base'
-                  placeholder='E-mail'
-                  required
-                />
-              </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email" className="text-sm font-medium text-brand-ink">
+              Correo electrónico
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              autoComplete="email"
+              className={inputStyles}
+              placeholder="tucorreo@empresa.com"
+              required
+            />
+          </div>
 
-              <div className='flex flex-col gap-2'>
-                <label
-                  htmlFor='phone'
-                  className='text-majica-text-light text-sm'
-                >
-                  Celular
-                </label>
-                <div className='flex items-center gap-2 border border-black/10 rounded-lg p-3'>
-                  <span className='text-majica-text-light whitespace-nowrap border-r-4 px-2 border-gray-200'>
-                    <span className='flex items-center gap-1'>
-                      <ColombiaIcon />
-                      <span> +57</span>
-                    </span>
-                  </span>
-                  <input
-                    type='tel'
-                    id='phone'
-                    name='phone'
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className='flex-1 border-none p-0 text-base focus:outline-none'
-                    placeholder='xxx xxxxxxx'
-                    required
-                  />
-                </div>
-              </div>
-              <div className='flex flex-col gap-2'>
-                <label
-                  htmlFor='message'
-                  className='text-majica-text-light text-sm'
-                >
-                  Mensaje
-                </label>
-                <textarea
-                  id='message'
-                  name='message'
-                  value={formData.message}
-                  // @ts-ignore
-                  onChange={handleChange}
-                  rows={4}
-                  className='w-full p-3 border border-black/10 rounded-lg text-base resize-none'
-                  placeholder='Escribe tu mensaje aquí...'
-                  required
-                />
-              </div>
-              {submitStatus.message && (
-                <div
-                  className={clsx(
-                    "p-3 rounded-lg",
-                    submitStatus.isError
-                      ? "bg-red-100 text-red-700"
-                      : "bg-green-100 text-green-700",
-                  )}
-                >
-                  {submitStatus.message}
-                </div>
-              )}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="phone" className="text-sm font-medium text-brand-ink">
+              Celular
+            </label>
+            <div className="flex items-center overflow-hidden rounded-xl border border-brand-line bg-brand-paper/60 transition-colors focus-within:border-brand-teal">
+              <span className="border-r border-brand-line px-4 py-3.5 text-sm font-medium text-brand-ink-soft">
+                +57
+              </span>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                autoComplete="tel-national"
+                inputMode="tel"
+                className="w-full bg-transparent p-3.5 text-base text-brand-ink placeholder:text-brand-ink-soft/60 focus:outline-none"
+                placeholder="300 123 4567"
+                required
+              />
+            </div>
+          </div>
 
-              <button
-                type='submit'
-                disabled={isSubmitting}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="message" className="text-sm font-medium text-brand-ink">
+              Cuéntanos qué necesitas
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows={4}
+              className={clsx(inputStyles, "resize-none")}
+              placeholder="Ej: necesito un aviso acrílico iluminado para mi local…"
+              required
+            />
+          </div>
+
+          <div aria-live="polite">
+            {submitStatus.message && (
+              <p
                 className={clsx(
-                  "mx-auto w-fit px-3 py-3 rounded-lg text-white font-semibold text-base transition-colors font-redhat",
-                  "bg-majica-primary hover:bg-majica-primary/80",
-                  "disabled:opacity-50 disabled:cursor-not-allowed",
+                  "rounded-xl p-3.5 text-sm font-medium",
+                  submitStatus.isError
+                    ? "bg-red-50 text-red-700"
+                    : "bg-brand-teal-soft text-brand-teal-ink",
                 )}
               >
-                {isSubmitting ? "Enviando..." : "Enviar"}
-              </button>
-            </form>
+                {submitStatus.message}
+              </p>
+            )}
           </div>
-        </article>
-      </article>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={clsx(
+              bricolage.className,
+              "min-h-[52px] w-full rounded-full bg-brand-coral px-8 py-3.5 text-base font-semibold text-white transition-all duration-200",
+              "hover:bg-brand-coral-ink active:scale-[0.99]",
+              "disabled:cursor-not-allowed disabled:opacity-50",
+            )}
+          >
+            {isSubmitting ? "Enviando…" : "Enviar mensaje"}
+          </button>
+        </form>
+      </div>
     </section>
   );
 };

@@ -4,11 +4,11 @@
 
 :root {
   /*Main Colors*/
-  --background: rgba(255, 255, 255, 1);
+  --background: #fbf6f2;
   --primary: rgba(240, 134, 118, 1);
   --secondary: rgba(26, 180, 170, 1);
   --secondary-opacity: rgba(26, 180, 170, 0.8);
-  --text-white: var(--background);
+  --text-white: #ffffff;
   --text-black: rgba(0, 0, 0, 1);
   --card-bg: #0a5657;
   --bg-lines: url("../../public/assets/images/lines.svg") no-repeat;
@@ -18,8 +18,8 @@
   --primary-pressed: rgba(255, 89, 64, 1);
 
   /* Texts */
-  --text-title: rgba(23, 6, 4, 1);
-  --text-body: rgba(130, 130, 130, 1);
+  --text-title: #28283d;
+  --text-body: #585874;
   --paragraph: #757095;
 
   /* Gradients */
@@ -41,8 +41,13 @@ body {
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-padding-top: 6rem;
+}
+
 body {
   background: var(--background);
+  color: var(--text-title);
 }
 
 * {
@@ -59,4 +64,29 @@ a {
 ul,
 ol {
   list-style: none;
+}
+
+/* Foco visible para navegación por teclado */
+:focus-visible {
+  outline: 2px solid #177e78;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: rgba(240, 134, 118, 0.35);
+}
+
+/* Sin animaciones para quien las desactiva en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

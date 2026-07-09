@@ -39,7 +39,7 @@ export const Hero = () => {
         <article className='bg-ground-lines flex flex-col gap-8 md:flex-row md:items-center justify-between md:gap-16'>
           <div className='relative w-full md:w-1/2'>
             <Image
-              src='/assets/images/PortfolioHero.png'
+              src='/assets/images/portfolio-hero.webp'
               alt='Equipo de trabajo'
               width={600}
               height={600}

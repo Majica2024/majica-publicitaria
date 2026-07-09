@@ -11,10 +11,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-pattern": "url('/assets/images/foto-banner.png')",
         "dots-pattern": "url('/assets/images/dots.png')",
         "ground-lines": "url('/assets/images/lines.svg')",
-        "hero-banner": "url('/assets/images/hero-banner.png')",
       },
       colors: {
         majica: {
@@ -29,10 +27,41 @@ module.exports = {
             light: "#667085", // Color texto gris
             paragraph: "#757095", // Color texto párrafo
           },
-          landing: {
-            hero: "url('/images/hero.jpg')",
-          },
         },
+        // Tokens semánticos del rediseño 2.0
+        brand: {
+          coral: "#F08676", // primario: CTAs, énfasis display
+          "coral-ink": "#C9503C", // coral accesible para texto sobre claro (AA)
+          "coral-soft": "#FCEAE5", // superficie coral tenue
+          teal: "#2BB4AC", // secundario: categorías, links, datos
+          "teal-ink": "#177E78", // turquesa accesible para texto sobre claro (AA)
+          "teal-soft": "#E2F4F3", // superficie turquesa tenue
+          ink: "#28283D", // texto principal, hero, footer
+          "ink-soft": "#585874", // texto secundario sobre claro
+          paper: "#FBF6F2", // fondo general cálido
+          line: "#EBE1DA", // bordes y divisores
+          "on-ink": "#F5EFEA", // texto sobre fondos tinta
+          "on-ink-soft": "#B9B4CE", // texto secundario sobre tinta
+          whatsapp: "#25D366",
+        },
+      },
+      fontFamily: {
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(16px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 36s linear infinite",
+        "fade-up": "fade-up .5s ease-out both",
       },
     },
   },

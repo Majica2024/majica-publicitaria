@@ -4,6 +4,10 @@ export const pages = [
     url: "/",
   },
   {
+    name: "Servicios",
+    url: "/#servicios",
+  },
+  {
     name: "Portafolio",
     url: "/portafolio",
   },
