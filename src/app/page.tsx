@@ -1,5 +1,6 @@
 import {
   Contact,
+  CtaBanner,
   Hero,
   InstagramSection,
   Process,
@@ -18,6 +19,7 @@ const Home = () => {
       <ServicesGrid />
       <Process />
       <Testimonials />
+      <CtaBanner />
       <InstagramSection />
       <Contact />
     </div>

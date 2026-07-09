@@ -4,5 +4,6 @@ export * from "./TrustBar";
 export * from "./ServicesGrid";
 export * from "./Process";
 export * from "./Testimonials";
+export * from "./CtaBanner";
 export * from "./InstagramSection";
 export * from "./Contact";

@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/fx";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { bricolage } from "@/utils";
 import clsx from "clsx";
@@ -52,8 +53,9 @@ export const InstagramSection = () => {
         </div>
 
         <ul className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-6">
-          {posts.map(({ image, alt }) => (
+          {posts.map(({ image, alt }, index) => (
             <li key={image}>
+              <Reveal delay={index * 70}>
               <Link
                 href={INSTAGRAM_URL}
                 target="_blank"
@@ -73,6 +75,7 @@ export const InstagramSection = () => {
                   <FaInstagram size={26} aria-hidden="true" />
                 </span>
               </Link>
+              </Reveal>
             </li>
           ))}
         </ul>

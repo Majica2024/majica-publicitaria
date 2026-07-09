@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/fx";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { bricolage } from "@/utils";
 import clsx from "clsx";
@@ -34,19 +35,25 @@ export const Process = () => {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
-        <SectionHeading
-          eyebrow="Cómo trabajamos"
-          title={
-            <>
-              De la idea a la instalación,{" "}
-              <span className="text-brand-teal-ink">sin fricciones</span>
-            </>
-          }
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Cómo trabajamos"
+            title={
+              <>
+                De la idea a la instalación,{" "}
+                <span className="text-brand-teal-ink">sin fricciones</span>
+              </>
+            }
+          />
+        </Reveal>
 
         <ol className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map(({ icon: Icon, title, description }, index) => (
-            <li key={title} className="relative flex flex-col gap-4">
+            <li key={title}>
+              <Reveal
+                delay={index * 110}
+                className="relative flex h-full flex-col gap-4"
+              >
               <div className="flex items-center gap-4">
                 <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-coral-soft text-brand-coral-ink">
                   <Icon size={26} strokeWidth={1.8} aria-hidden="true" />
@@ -72,6 +79,7 @@ export const Process = () => {
               <p className="text-sm leading-relaxed text-brand-ink-soft">
                 {description}
               </p>
+              </Reveal>
             </li>
           ))}
         </ol>

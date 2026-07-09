@@ -1,3 +1,4 @@
+import { Reveal, TiltCard } from "@/components/fx";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { testimonials } from "@/data";
 import { bricolage } from "@/utils";
@@ -14,23 +15,27 @@ const webpImage = (path: string) =>
 export const Testimonials = () => {
   return (
     <section id="casos-de-exito" className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
-      <SectionHeading
-        eyebrow="Casos de éxito"
-        title={
-          <>
-            Marcas que ya se{" "}
-            <span className="text-brand-coral-ink">imprimen con Majica</span>
-          </>
-        }
-        description="Proyectos reales de sublimación, P.O.P y gran formato para empresas que vuelven a cotizar."
-      />
+      <Reveal>
+        <SectionHeading
+          eyebrow="Casos de éxito"
+          title={
+            <>
+              Marcas que ya se{" "}
+              <span className="text-brand-coral-ink">imprimen con Majica</span>
+            </>
+          }
+          description="Proyectos reales de sublimación, P.O.P y gran formato para empresas que vuelven a cotizar."
+        />
+      </Reveal>
 
       <ul className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
-        {testimonials.map((testimonial) => (
-          <li
-            key={testimonial.id}
-            className="flex flex-col gap-5 rounded-2xl border border-brand-line bg-white p-8"
-          >
+        {testimonials.map((testimonial, index) => (
+          <li key={testimonial.id}>
+            <Reveal delay={(index % 2) * 110} className="h-full">
+            <TiltCard
+              maxTilt={4}
+              className="flex h-full flex-col gap-5 rounded-2xl border border-brand-line bg-white p-8"
+            >
             <div className="flex items-center justify-between gap-4">
               <Image
                 src={webpImage(testimonial.image)}
@@ -59,6 +64,8 @@ export const Testimonials = () => {
             >
               {testimonial.client}
             </footer>
+            </TiltCard>
+            </Reveal>
           </li>
         ))}
       </ul>
