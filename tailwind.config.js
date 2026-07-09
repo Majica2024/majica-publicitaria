@@ -66,6 +66,14 @@ module.exports = {
           "0%, 100%": { transform: "scale(1)", opacity: "0.85" },
           "50%": { transform: "scale(1.15)", opacity: "1" },
         },
+        "hero-zoom": {
+          from: { transform: "scale(1.05)" },
+          to: { transform: "scale(1.16)" },
+        },
+        cue: {
+          "0%, 100%": { transform: "translateY(0)", opacity: "0.6" },
+          "50%": { transform: "translateY(8px)", opacity: "1" },
+        },
       },
       animation: {
         marquee: "marquee 36s linear infinite",
@@ -74,6 +82,8 @@ module.exports = {
         float: "float 7s ease-in-out infinite",
         "float-delayed": "float 8.5s ease-in-out 1.2s infinite",
         "glow-pulse": "glow-pulse 9s ease-in-out infinite",
+        "hero-zoom": "hero-zoom 26s ease-in-out infinite alternate",
+        cue: "cue 2.2s ease-in-out infinite",
       },
     },
   },

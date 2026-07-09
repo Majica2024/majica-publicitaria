@@ -17,7 +17,10 @@ export const ServicesMarquee = () => {
       aria-label={`Nuestros servicios: ${items.join(", ")}. Ir al catálogo`}
       className="block overflow-hidden border-y border-brand-line bg-white py-4"
     >
-      <div aria-hidden="true" className="flex w-max animate-marquee">
+      <div
+        aria-hidden="true"
+        className="flex w-max animate-marquee hover:[animation-play-state:paused]"
+      >
         {[0, 1].map((copy) => (
           <ul
             key={copy}

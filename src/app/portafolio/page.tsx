@@ -2,6 +2,7 @@
 
 import { PortfolioSection } from "@/components/sections/portfolio";
 import { Hero } from "@/components/sections/portfolio/Hero";
+import { ProductionReel } from "@/components/sections/portfolio/ProductionReel";
 import { PortfolioSectionInformation } from "@/data";
 import "../globals.css";
 
@@ -9,6 +10,7 @@ const Portfolio = () => {
   return (
     <section className='flex flex-col mt-40'>
       <Hero />
+      <ProductionReel />
       {PortfolioSectionInformation.map((section) => (
         <PortfolioSection
           key={section.id}
