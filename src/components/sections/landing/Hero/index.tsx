@@ -7,7 +7,7 @@ import Image from "next/image";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 const proof = [
-  { value: "11", label: "líneas de servicio" },
+  { value: "12", label: "líneas de servicio" },
   { value: "+100", label: "proyectos entregados" },
   { value: "Bogotá", label: "y toda Colombia" },
 ];
@@ -59,9 +59,9 @@ export const Hero = () => {
 
           <Reveal delay={200}>
             <p className="max-w-lg text-base leading-relaxed text-brand-on-ink-soft md:text-lg">
-              Avisos, gran formato, P.O.P y 8 líneas más de producción
-              publicitaria. Diseñamos, imprimimos e instalamos para que tu
-              marca se imponga.
+              Avisos, gran formato, P.O.P, textiles y 8 líneas más de
+              producción publicitaria. Diseñamos, imprimimos e instalamos para
+              que tu marca se imponga.
             </p>
           </Reveal>
 
@@ -105,13 +105,13 @@ export const Hero = () => {
         <div className="relative hidden md:block">
           <Parallax speed={-0.06}>
             <Image
-              src="/assets/images/hero.webp"
-              alt="Equipo de Majica instalando impresión publicitaria de gran formato"
+              src="/assets/images/work/hero-honda.webp"
+              alt="Arco inflable y banderas producidas por Majica en la fachada de un concesionario Honda"
               width={800}
               height={1000}
               sizes="(max-width: 768px) 0px, 45vw"
               priority
-              className="h-[560px] w-full rounded-2xl object-cover object-top shadow-2xl [mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"
+              className="h-[560px] w-full rounded-2xl object-cover shadow-2xl [mask-image:linear-gradient(to_bottom,black_82%,transparent_100%)]"
             />
           </Parallax>
 

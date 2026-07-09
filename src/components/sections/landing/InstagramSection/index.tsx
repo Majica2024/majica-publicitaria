@@ -13,12 +13,12 @@ const INSTAGRAM_URL = "https://www.instagram.com/majicapublicitaria";
  * en lugar del embed oficial de Meta (~1 MB de scripts) para no castigar el LCP.
  */
 const posts = [
-  { image: "/assets/images/tropezones.webp", alt: "Exhibidores tropezones producidos en el taller" },
-  { image: "/assets/images/pop.webp", alt: "Material P.O.P personalizado con marca" },
-  { image: "/assets/images/grabado-laser.webp", alt: "Pieza corporativa en grabado láser" },
-  { image: "/assets/images/inflatable.webp", alt: "Inflable publicitario de gran escala" },
-  { image: "/assets/images/acrilicos.webp", alt: "Aviso acrílico iluminado instalado" },
-  { image: "/assets/images/big-format.webp", alt: "Impresión de gran formato en exteriores" },
+  { image: "/assets/images/work/ig-juliao.webp", alt: "Arco floral impreso para la vitrina de Juliao Boticarios" },
+  { image: "/assets/images/work/ig-nero.webp", alt: "Gorra bordada para Nero Motori" },
+  { image: "/assets/images/work/ig-aggremax.webp", alt: "Botilitos de bambú personalizados para AggreMax" },
+  { image: "/assets/images/work/ig-stem.webp", alt: "Camisetas Futuro STEM sublimadas para Cenisoft y Fedesoft" },
+  { image: "/assets/images/work/ig-honda.webp", alt: "Señaléticas de escritorio para asesores Honda" },
+  { image: "/assets/images/work/ig-bordado.webp", alt: "Detalle de bordado de alta densidad en gorra" },
 ];
 
 export const InstagramSection = () => {

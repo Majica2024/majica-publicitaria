@@ -2,7 +2,8 @@ export type ServiceCategory =
   | "Avisos"
   | "Impresión"
   | "Exhibición"
-  | "Estructuras";
+  | "Estructuras"
+  | "Textil";
 
 export interface Service {
   slug: string;
@@ -21,7 +22,7 @@ export const services: Service[] = [
     category: "Avisos",
     description:
       "Piezas en acrílico premium para negocios, oficinas y eventos: mate, brillo, transparente o con iluminación.",
-    image: "/assets/images/acrilicos.webp",
+    image: "/assets/images/work/acrilicos-honda.webp",
   },
   {
     slug: "impresion-gran-formato",
@@ -30,7 +31,7 @@ export const services: Service[] = [
     category: "Impresión",
     description:
       "Vinilos, lonas, canvas y vallas con alta resolución y protección UV, desde displays hasta gigantografías.",
-    image: "/assets/images/big-format.webp",
+    image: "/assets/images/work/gran-formato-honda.webp",
   },
   {
     slug: "senalizacion",
@@ -39,7 +40,7 @@ export const services: Service[] = [
     category: "Avisos",
     description:
       "Señalética informativa, direccional, de seguridad y corporativa que cumple normativa vigente.",
-    image: "/assets/images/signaling.webp",
+    image: "/assets/images/work/senalizacion-honda.webp",
   },
   {
     slug: "plotter-de-corte",
@@ -48,7 +49,7 @@ export const services: Service[] = [
     category: "Impresión",
     description:
       "Corte de vinilo de precisión para vitrinas, vehículos, decoración y rotulación de espacios.",
-    image: "/assets/images/plotter.webp",
+    image: "/assets/images/work/plotter-cenisoft.webp",
   },
   {
     slug: "porta-pendones",
@@ -57,7 +58,7 @@ export const services: Service[] = [
     category: "Exhibición",
     description:
       "Estructuras livianas y portátiles para activaciones, ferias y puntos de venta.",
-    image: "/assets/images/banner-holder.webp",
+    image: "/assets/images/work/pendones-shimoto.webp",
   },
   {
     slug: "inflables-dummies",
@@ -66,7 +67,7 @@ export const services: Service[] = [
     category: "Exhibición",
     description:
       "Figuras de gran escala que hacen imposible no ver tu marca en eventos y exteriores.",
-    image: "/assets/images/inflatable.webp",
+    image: "/assets/images/work/inflable-chevrolet.webp",
   },
   {
     slug: "material-pop",
@@ -75,7 +76,7 @@ export const services: Service[] = [
     category: "Exhibición",
     description:
       "Manillas, botones, llaveros y merchandising que convierten clientes en embajadores.",
-    image: "/assets/images/pop.webp",
+    image: "/assets/images/work/pop-honda.webp",
   },
   {
     slug: "corte-grabado-laser",
@@ -93,7 +94,7 @@ export const services: Service[] = [
     category: "Exhibición",
     description:
       "Exhibición de producto en punto de venta: visible, resistente y lista para rotar inventario.",
-    image: "/assets/images/exhibitors.webp",
+    image: "/assets/images/work/exhibidor-sbc.webp",
   },
   {
     slug: "estructuras-metalicas",
@@ -102,7 +103,7 @@ export const services: Service[] = [
     category: "Estructuras",
     description:
       "Soportes y estructuras a medida para avisos, vallas y montajes de gran formato.",
-    image: "/assets/images/estructuras-metalicas.webp",
+    image: "/assets/images/work/estructuras-honda.webp",
   },
   {
     slug: "bastidores",
@@ -112,6 +113,15 @@ export const services: Service[] = [
     description:
       "Marcos tensados para lonas y textiles con acabado limpio, listos para instalar.",
     image: "/assets/images/bastidores.webp",
+  },
+  {
+    slug: "textiles-dotacion",
+    name: "Textiles y Dotación",
+    shortName: "Textiles · dotación",
+    category: "Textil",
+    description:
+      "Polos, camisetas, gorras y uniformes con bordado o sublimación: tu equipo también es publicidad.",
+    image: "/assets/images/work/textiles-mym.webp",
   },
 ];
 

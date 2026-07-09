@@ -19,7 +19,7 @@ export const ServicesGrid = () => {
               <span className="text-brand-coral-ink">bajo un mismo taller</span>
             </>
           }
-          description="Once líneas de producción con diseño, fabricación e instalación incluidos. Cotiza el servicio exacto que buscas en un mensaje."
+          description="Doce líneas de producción con diseño, fabricación e instalación incluidos. Cotiza el servicio exacto que buscas en un mensaje."
         />
       </Reveal>
 
