@@ -99,23 +99,11 @@ export const Footer = () => {
               Diseñado por{" "}
               <Link
                 className="underline transition-colors hover:text-brand-on-ink"
-                href="https://www.linkedin.com/in/auracristina0693/"
+                href="https://www.linkedin.com/in/andr%C3%A9s-felipe-mu%C3%B1oz-parra-666125219/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Aura Cristina Salazar
-              </Link>
-            </span>
-            <span className="flex items-center gap-1.5">
-              <FaLinkedin size={14} aria-hidden="true" />
-              Desarrollado por{" "}
-              <Link
-                className="underline transition-colors hover:text-brand-on-ink"
-                href="https://www.linkedin.com/in/soysergiogonza/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Sergio González
+                Andres Muñoz
               </Link>
             </span>
           </div>
