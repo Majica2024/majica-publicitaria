@@ -17,7 +17,7 @@ const Home = () => {
       <Hero />
       <ServicesMarquee />
       <TrustBar />
-      <ProductionReel />
+      <ProductionReel variant="ambient" />
       <ServicesGrid />
       <Process />
       <Testimonials />

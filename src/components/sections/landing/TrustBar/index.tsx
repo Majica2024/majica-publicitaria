@@ -14,7 +14,7 @@ const clients = [
   { name: "Bajaj", logo: "/assets/logos/bajaj.svg", h: "h-10 md:h-11" },
   { name: "Fedesoft", logo: "/assets/logos/fedesoft.png", h: "h-8 md:h-9" },
   { name: "Cenisoft", logo: "/assets/logos/cenisoft.png", h: "h-8 md:h-9" },
-  { name: "Nero Motori", logo: "/assets/logos/nero.png", h: "h-10 md:h-11" },
+  { name: "Nero Motori", logo: "/assets/logos/nero-red.png", h: "h-10 md:h-12" },
 ];
 
 export const TrustBar = () => {

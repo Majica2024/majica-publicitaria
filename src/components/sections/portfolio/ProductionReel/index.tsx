@@ -1,6 +1,6 @@
 "use client";
 
-import { Reveal } from "@/components/fx";
+import { Parallax, Reveal } from "@/components/fx";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { bricolage } from "@/utils";
 import clsx from "clsx";
@@ -11,6 +11,10 @@ interface Reel {
   poster: string;
   title: string;
   client: string;
+}
+
+interface ProductionReelProps {
+  variant?: "cards" | "ambient";
 }
 
 const reels: Reel[] = [
@@ -45,8 +49,8 @@ const reels: Reel[] = [
  * solo mientras están en el viewport (IntersectionObserver); con
  * prefers-reduced-motion no hay autoplay y se muestran los controles.
  */
-export const ProductionReel = () => {
-  const containerRef = useRef<HTMLUListElement>(null);
+export const ProductionReel = ({ variant = "cards" }: ProductionReelProps) => {
+  const containerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -80,6 +84,71 @@ export const ProductionReel = () => {
     return () => io.disconnect();
   }, []);
 
+  if (variant === "ambient") {
+    return (
+      <section
+        ref={(node) => {
+          containerRef.current = node;
+        }}
+        aria-label="Producción real en movimiento"
+        className="relative isolate overflow-hidden bg-brand-ink px-4 py-24 text-brand-on-ink md:px-8 md:py-32"
+      >
+        <Parallax
+          speed={0.14}
+          className="pointer-events-none absolute inset-x-0 top-[-12%] -z-10 h-[124%]"
+        >
+          <div className="grid h-full min-h-[560px] grid-cols-2 gap-3 opacity-20 mix-blend-screen md:grid-cols-4 md:gap-4">
+            {reels.map((reel, index) => (
+              <video
+                key={reel.src}
+                src={reel.src}
+                poster={reel.poster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+                className={clsx(
+                  "h-full w-full object-cover saturate-125",
+                  index % 2 === 0 ? "translate-y-10" : "-translate-y-8",
+                )}
+              />
+            ))}
+          </div>
+        </Parallax>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(240,134,118,0.28),transparent_34%),linear-gradient(90deg,rgba(40,40,61,0.96),rgba(40,40,61,0.72),rgba(40,40,61,0.96))]"
+        />
+
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 text-center">
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-coral">
+              Producción en vivo
+            </p>
+          </Reveal>
+          <Reveal delay={100}>
+            <h2
+              className={clsx(
+                bricolage.className,
+                "max-w-4xl text-balance text-4xl font-bold leading-[1.05] md:text-6xl",
+              )}
+            >
+              Tu marca también puede verse así, mientras la hacemos realidad
+            </h2>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="max-w-2xl text-base leading-relaxed text-brand-on-ink-soft md:text-lg">
+              Bordado, sublimación y personalización real del taller como fondo:
+              movimiento sutil, textura de trabajo y piezas terminadas con carácter.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="mx-auto max-w-[92rem] px-4 py-16 md:px-8 md:py-24">
       <Reveal>
@@ -95,7 +164,9 @@ export const ProductionReel = () => {
       </Reveal>
 
       <ul
-        ref={containerRef}
+        ref={(node) => {
+          containerRef.current = node;
+        }}
         className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:gap-8"
       >
         {reels.map((reel, index) => (
