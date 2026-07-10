@@ -81,7 +81,7 @@ export const ProductionReel = () => {
   }, []);
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-24">
+    <section className="mx-auto max-w-[92rem] px-4 py-16 md:px-8 md:py-24">
       <Reveal>
         <SectionHeading
           eyebrow="Producción en vivo"
@@ -96,7 +96,7 @@ export const ProductionReel = () => {
 
       <ul
         ref={containerRef}
-        className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"
+        className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:gap-8"
       >
         {reels.map((reel, index) => (
           <li key={reel.src}>
@@ -111,7 +111,7 @@ export const ProductionReel = () => {
                   playsInline
                   preload="metadata"
                   aria-label={`Video de producción: ${reel.title} para ${reel.client}`}
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-brand-ink/90 to-transparent p-4 pt-10">
                   <span>

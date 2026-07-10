@@ -20,7 +20,7 @@ export const CtaBanner = () => {
       {/* Tipografía gigante delineada desplazándose al fondo */}
       <Parallax speed={0.1} className="absolute inset-x-0 top-6 md:top-2">
         <div aria-hidden="true" className="flex w-max animate-marquee-slow">
-          {[0, 1].map((copy) => (
+          {Array.from({ length: 4 }, (_, copy) => (
             <p
               key={copy}
               className={clsx(

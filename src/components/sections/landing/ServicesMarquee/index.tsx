@@ -21,7 +21,7 @@ export const ServicesMarquee = () => {
         aria-hidden="true"
         className="flex w-max animate-marquee hover:[animation-play-state:paused]"
       >
-        {[0, 1].map((copy) => (
+        {Array.from({ length: 4 }, (_, copy) => (
           <ul
             key={copy}
             className={clsx(

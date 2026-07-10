@@ -52,7 +52,7 @@ module.exports = {
       keyframes: {
         marquee: {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
+          to: { transform: "translateX(-25%)" },
         },
         "fade-up": {
           from: { opacity: "0", transform: "translateY(16px)" },
@@ -76,8 +76,8 @@ module.exports = {
         },
       },
       animation: {
-        marquee: "marquee 36s linear infinite",
-        "marquee-slow": "marquee 60s linear infinite",
+        marquee: "marquee 46s linear infinite",
+        "marquee-slow": "marquee 80s linear infinite",
         "fade-up": "fade-up .5s ease-out both",
         float: "float 7s ease-in-out infinite",
         "float-delayed": "float 8.5s ease-in-out 1.2s infinite",

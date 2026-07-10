@@ -9,6 +9,7 @@ import {
   Testimonials,
   TrustBar,
 } from "@/components/sections/landing";
+import { ProductionReel } from "@/components/sections/portfolio";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Hero />
       <ServicesMarquee />
       <TrustBar />
+      <ProductionReel />
       <ServicesGrid />
       <Process />
       <Testimonials />

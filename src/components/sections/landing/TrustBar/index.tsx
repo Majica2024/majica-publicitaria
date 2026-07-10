@@ -26,7 +26,7 @@ export const TrustBar = () => {
         </p>
         <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
           <div className="flex w-max animate-marquee-slow items-center hover:[animation-play-state:paused]">
-            {[0, 1].map((copy) => (
+            {Array.from({ length: 4 }, (_, copy) => (
               <ul
                 key={copy}
                 aria-hidden={copy === 1}
