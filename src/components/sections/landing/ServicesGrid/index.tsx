@@ -9,7 +9,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 export const ServicesGrid = () => {
   return (
-    <section id="servicios" className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
+    <section id="servicios" className="mx-auto max-w-7xl px-4 pb-20 pt-12 md:px-8 md:pb-28 md:pt-16">
       <Reveal>
         <SectionHeading
           eyebrow="Catálogo de servicios"

@@ -12,13 +12,14 @@ const clients = [
   { name: "Chevrolet", logo: "/assets/logos/chevrolet.svg", h: "h-9 md:h-10" },
   { name: "Auteco", logo: "/assets/logos/auteco.svg", h: "h-9 md:h-10" },
   { name: "Bajaj", logo: "/assets/logos/bajaj.svg", h: "h-10 md:h-11" },
-  { name: "Cenisoft", logo: "/assets/logos/cenisoft.png", h: "h-7 md:h-8" },
-  { name: "Nero Motori", logo: "/assets/logos/nero.png", h: "h-9 md:h-10" },
+  { name: "Fedesoft", logo: "/assets/logos/fedesoft.png", h: "h-8 md:h-9" },
+  { name: "Cenisoft", logo: "/assets/logos/cenisoft.png", h: "h-8 md:h-9" },
+  { name: "Nero Motori", logo: "/assets/logos/nero.png", h: "h-10 md:h-11" },
 ];
 
 export const TrustBar = () => {
   return (
-    <section aria-label="Clientes que confían en Majica" className="py-12">
+    <section aria-label="Clientes que confían en Majica" className="pb-4 pt-10">
       <Reveal>
         <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.18em] text-brand-ink-soft">
           Marcas que ya se imprimen con Majica

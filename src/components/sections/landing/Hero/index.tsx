@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/Button";
 import { WHATSAPP_DEFAULT_MESSAGE, bricolage, whatsappLink } from "@/utils";
 import clsx from "clsx";
 import { BadgeCheck, ChevronDown, Truck } from "lucide-react";
-import Image from "next/image";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { HeroSlider, type HeroSlide } from "./HeroSlider";
 
 const proof = [
   { value: "12", label: "líneas de servicio" },
@@ -12,31 +12,59 @@ const proof = [
   { value: "Bogotá", label: "y toda Colombia" },
 ];
 
+const slides: HeroSlide[] = [
+  {
+    type: "video",
+    src: "/assets/videos/hero-bordado.mp4",
+    poster: "/assets/videos/hero-bordado-poster.jpg",
+    alt: "Bordado de alta densidad producido en el taller de Majica",
+  },
+  {
+    type: "image",
+    src: "/assets/images/work/hero-honda-wide.webp",
+    alt: "Arco inflable y banderas producidas por Majica en un concesionario Honda",
+  },
+  {
+    type: "image",
+    src: "/assets/images/work/hero-motoxpert.webp",
+    alt: "Avisos acrílicos iluminados para MotoXperts y Phelon & Moore",
+  },
+  {
+    type: "video",
+    src: "/assets/videos/hero-botilitos.mp4",
+    poster: "/assets/videos/hero-botilitos-poster.jpg",
+    alt: "Botilitos y kit corporativo Nero Motori",
+  },
+  {
+    type: "image",
+    src: "/assets/images/work/hero-boricario.webp",
+    alt: "Tablero decorativo instalado para Juliao Boticarios",
+  },
+  {
+    type: "image",
+    src: "/assets/images/work/hero-nero-bolsas.webp",
+    alt: "Bolsas en drill estampadas para Nero Motori",
+  },
+];
+
 export const Hero = () => {
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-majica-dark">
-      {/* Fondo full-bleed: trabajo real con parallax + zoom cinematográfico lento */}
+      {/* Fondo full-bleed: slider de trabajo real (fotos + videos) con parallax */}
       <Parallax speed={0.14} className="absolute inset-0 [&>div]:h-full">
-        <div className="h-full w-full motion-safe:animate-hero-zoom">
-          <Image
-            src="/assets/images/work/hero-honda-wide.webp"
-            alt="Arco inflable y banderas producidas por Majica en la fachada de un concesionario Honda"
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover object-[62%_center] md:object-center"
-          />
+        <div className="relative h-full w-full">
+          <HeroSlider slides={slides} />
         </div>
       </Parallax>
 
       {/* Veladuras para legibilidad: lateral izquierda + viñeta inferior */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-majica-dark/95 via-majica-dark/70 to-majica-dark/20"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-majica-dark/95 via-majica-dark/70 to-majica-dark/20"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-majica-dark/90 via-transparent to-majica-dark/40"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-majica-dark/90 via-transparent to-majica-dark/40"
       />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 pb-24 pt-28 md:px-8">
